@@ -116,8 +116,20 @@ p {
     padding-bottom: 16px;
 }
 
+/* El logo se ancla arriba-izquierda para que el nuevo diseño "Apunta APP"
+   (con "APP" colgando abajo a la derecha) crezca solo hacia abajo, nunca
+   hacia arriba, dentro de la cabecera flex centrada. */
+.logo {
+    align-self: flex-start;
+}
+
+/* Tamaño fijado por ANCHO (height:auto): el ancho del logotipo en pantalla
+   se mantiene igual que el diseño anterior (cuando era height:40px) y el
+   "APP" cae por debajo sin estrechar la marca. */
 .logo-imagen {
-    height: 40px;
+    width: 147px;
+    height: auto;
+    display: block;
 }
 
 .navegacion ul {
@@ -339,8 +351,12 @@ p {
     margin-bottom: 48px;
 }
 
+/* Mismo criterio que el logo de cabecera: ancho fijo (height:auto) para
+   conservar el ancho anterior (height:36px) y dejar caer el "APP" debajo.
+   En el pie el grid alinea arriba por defecto, así crece hacia abajo. */
 .pie-logo-imagen {
-    height: 36px;
+    width: 132px;
+    height: auto;
     margin-bottom: 12px;
 }
 
