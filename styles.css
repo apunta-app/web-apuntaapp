@@ -225,6 +225,59 @@ p {
     box-shadow: none;
 }
 
+/* DESCARGA - DOS PLATAFORMAS (Android disponible / iOS próximamente) */
+.descarga-plataformas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.plataforma {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.insignia-imagen {
+    width: 200px;
+    height: auto;
+}
+
+.insignia-google-play:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+.qr-descarga {
+    width: 160px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.qr-pie {
+    color: #606060;
+    font-size: 0.9rem;
+}
+
+/* Columna iOS atenuada: aún NO está disponible */
+.plataforma-proximamente {
+    opacity: 0.55;
+    filter: grayscale(100%);
+}
+
+.proximamente-titulo {
+    color: #2d5a3d;
+    font-weight: 600;
+    font-size: 1.05rem;
+    /* Alinea verticalmente con la insignia de Google Play de la otra columna */
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
 /* SECCIONES */
 .seccion {
     padding: 80px 0;
@@ -531,5 +584,17 @@ p {
     .pie-contenido {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    /* En móvil, Android e iOS se apilan y quedan centrados */
+    .descarga-plataformas {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    /* La altura de reserva del título "Próximamente" sobra al apilarse */
+    .proximamente-titulo {
+        min-height: 0;
     }
 }
