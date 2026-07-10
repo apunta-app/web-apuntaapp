@@ -246,9 +246,18 @@ p {
     height: auto;
 }
 
-.insignia-google-play:hover {
+.insignia-google-play:hover,
+.insignia-app-store:hover {
     transform: translateY(-2px);
     transition: transform 0.2s ease;
+}
+
+/* Badge de App Store: misma ALTURA que el de Google Play (que se renderiza a
+   ~59,4px con width:200px sobre un original de 478x142). Ancho automático para
+   respetar la proporción oficial del badge de Apple (no se deforma nunca). */
+.insignia-imagen-apple {
+    height: 59px;
+    width: auto;
 }
 
 .qr-descarga {
@@ -260,22 +269,6 @@ p {
 .qr-pie {
     color: #606060;
     font-size: 0.9rem;
-}
-
-/* Columna iOS atenuada: aún NO está disponible */
-.plataforma-proximamente {
-    opacity: 0.55;
-    filter: grayscale(100%);
-}
-
-.proximamente-titulo {
-    color: #2d5a3d;
-    font-weight: 600;
-    font-size: 1.05rem;
-    /* Alinea verticalmente con la insignia de Google Play de la otra columna */
-    min-height: 60px;
-    display: flex;
-    align-items: center;
 }
 
 /* SECCIONES */
@@ -591,10 +584,5 @@ p {
         flex-direction: column;
         align-items: center;
         gap: 40px;
-    }
-
-    /* La altura de reserva del título "Próximamente" sobra al apilarse */
-    .proximamente-titulo {
-        min-height: 0;
     }
 }
