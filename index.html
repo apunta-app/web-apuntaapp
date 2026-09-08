@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apunta. Tu carpeta de facturas, ordenada, en el móvil. App sencilla para autónomos que quieren dedicar su tiempo al negocio, no a buscar facturas.">
-    <meta name="keywords" content="apunta, app autónomos, facturas autónomo, gestión facturas, OCR facturas, app gestor, ingresos gastos autónomo">
+    <meta name="description" content="Apunta. Las facturas, ordenadas. En el móvil del autónomo y en el escritorio de su gestor.">
+    <meta name="keywords" content="apunta, app autónomos, facturas autónomo, software gestoría, asesoría fiscal, OCR facturas, CONTASOL, libro registro">
     <meta name="author" content="Evolution Studios S.L.">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph para redes sociales -->
     <meta property="og:title" content="Apunta... Y olvídate.">
-    <meta property="og:description" content="Tu carpeta de facturas, ordenada, en el móvil. Para autónomos que prefieren dedicar su tiempo al negocio.">
+    <meta property="og:description" content="Las facturas, ordenadas. En el móvil del autónomo y en el escritorio de su gestor.">
     <meta property="og:url" content="https://apuntaapp.com">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
 
-    <title>Apunta... Y olvídate. — Tu carpeta de facturas, ordenada, en el móvil</title>
+    <title>Apunta... Y olvídate. — Las facturas, ordenadas</title>
 
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -25,169 +25,54 @@
     <!-- CABECERA -->
     <header class="header">
         <div class="contenedor">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="logo-apunta.png" alt="Apunta" class="logo-imagen">
             </a>
             <nav class="navegacion">
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#para-quien">Para quién</a></li>
-                    <li><a href="#como-funciona">Cómo funciona</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="autonomos.html">Autónomos</a></li>
+                    <li><a href="gestorias.html">Gestorías</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- HERO -->
-    <section id="inicio" class="hero">
+    <section id="inicio" class="hero hero-portada">
         <div class="contenedor">
             <div class="hero-contenido">
                 <h1>Apunta...<br>Y olvídate.</h1>
-                <p class="hero-subtitulo">Tu carpeta de facturas, ordenada, en el móvil. Para autónomos que prefieren dedicar su tiempo al negocio, no a buscar papeles.</p>
-                <div class="hero-acciones">
-                    <div class="descarga-plataformas">
-                        <!-- ANDROID (disponible) -->
-                        <div class="plataforma plataforma-android">
-                            <a href="https://play.google.com/store/apps/details?id=app.apunta.apunta" target="_blank" rel="noopener" class="insignia-google-play">
-                                <img src="GetItOnGooglePlay_Badge_Web_color_Spanish.png" alt="Descargar Apunta en Google Play" class="insignia-imagen">
-                            </a>
-                            <img src="qr-google-play.png" alt="Código QR para descargar Apunta en Google Play" class="qr-descarga">
-                            <span class="qr-pie">Escanea para descargar en Android</span>
-                        </div>
-                        <!-- iOS (disponible) -->
-                        <div class="plataforma plataforma-ios">
-                            <a href="https://apps.apple.com/es/app/apunta-app/id6788078139" target="_blank" rel="noopener" class="insignia-app-store">
-                                <img src="badge-app-store.svg" alt="Descargar Apunta en el App Store" class="insignia-imagen-apple">
-                            </a>
-                            <img src="qr-app-store.png" alt="Código QR para descargar Apunta en el App Store" class="qr-descarga">
-                            <span class="qr-pie">Escanea para descargar en iPhone</span>
-                        </div>
-                    </div>
-                    <span class="hero-precio">49,99 € · Pago único · Sin suscripciones · Sin publicidad</span>
-                </div>
-            </div>
-            <div class="hero-imagen">
-                <img src="capturas/01-dashboard.png" alt="Pantalla principal de Apunta" class="captura-movil">
+                <p class="hero-subtitulo">Las facturas, ordenadas. En el móvil del autónomo y en el escritorio de su gestor.</p>
             </div>
         </div>
     </section>
 
-    <!-- PARA QUIÉN ES APUNTA -->
-    <section id="para-quien" class="seccion seccion-clara">
-        <div class="contenedor contenedor-estrecho">
-            <h2>Para quién es Apunta</h2>
-            <p class="texto-principal">Apunta está pensado para autónomos que quieren dedicar su tiempo al negocio, no a buscar facturas. Una app sencilla que recoge todo lo que cobras y todo lo que gastas, lo organiza por trimestres, y prepara el resumen para tu gestor cuando llega la fecha.</p>
-            <p class="texto-principal">Sin contabilidad complicada. Sin suscripciones. Sin perder facturas.</p>
-        </div>
-    </section>
-
-    <!-- CÓMO FUNCIONA -->
-    <section id="como-funciona" class="seccion">
-        <div class="contenedor">
-            <h2 class="centrado">Cómo funciona</h2>
-            <p class="texto-introductorio">Tres pasos. Sin manuales, sin formación.</p>
-
-            <div class="pasos">
-                <div class="paso">
-                    <div class="paso-numero">1</div>
-                    <h3>Hazle una foto</h3>
-                    <p>Pulsa INGRESO o GASTO y haz una foto de la factura o el ticket. Apunta la guarda en tu móvil, cifrada.</p>
-                </div>
-                <div class="paso">
-                    <div class="paso-numero">2</div>
-                    <h3>Apunta lee los datos</h3>
-                    <p>Detecta automáticamente fecha, total, IVA, IRPF y datos del cliente o proveedor. Tú revisas y confirmas.</p>
-                </div>
-                <div class="paso">
-                    <div class="paso-numero">3</div>
-                    <h3>Exporta al gestor</h3>
-                    <p>Al final del trimestre, generas un PDF, un Excel y un ZIP con todas las fotos. Listo para tu gestor.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CAPTURAS DE LA APP -->
+    <!-- LOS DOS CAMINOS -->
+    <!-- 🔴 EL DE AUTÓNOMOS VA PRIMERO, A LA IZQUIERDA, Y NO SE MUEVE DE AHÍ.
+         apuntaapp.com es la dirección que va DENTRO de los PDF y Excel que los
+         clientes ya han exportado, y esa dirección no se puede cambiar nunca.
+         Quien llegue por ahí es un autónomo. -->
     <section class="seccion seccion-clara">
         <div class="contenedor">
-            <h2 class="centrado">Apunta en tu móvil</h2>
-            <p class="texto-introductorio">Sencillo, claro, en español de España. Sin tecnicismos.</p>
+            <div class="caminos">
 
-            <div class="capturas-galeria">
-                <div class="captura-item">
-                    <img src="capturas/01-dashboard.png" alt="Pantalla principal con ingresos, gastos y beneficio del mes">
-                    <p class="captura-pie">Pantalla principal: lo que has ingresado, lo que te has gastado, lo que te queda.</p>
+                <div class="camino">
+                    <p class="camino-quien">Soy autónomo</p>
+                    <h2>Apunta para el móvil</h2>
+                    <p class="camino-texto">Foto a la factura y listo. Todo ordenado por trimestres para tu gestor.</p>
+                    <p class="camino-precio">49,99 € · pago único</p>
+                    <a href="autonomos.html" class="boton-principal">Ver Apunta para el móvil</a>
                 </div>
-                <div class="captura-item">
-                    <img src="capturas/02-confirmacion-ocr.png" alt="Pantalla de confirmación tras capturar una factura, con el justificante de pago adjunto">
-                    <p class="captura-pie">Tras la foto: Apunta detecta los datos. Tú confirmas. Y si quieres, adjuntas el justificante de pago.</p>
+
+                <div class="camino">
+                    <p class="camino-quien">Soy gestor o asesor</p>
+                    <h2>Apunta para Windows</h2>
+                    <p class="camino-texto">Lee las facturas de tus clientes y te las deja listas para tu programa de gestión.</p>
+                    <p class="camino-precio">250 € + IVA al año · un mes de prueba</p>
+                    <a href="gestorias.html" class="boton-principal">Ver Apunta para Windows</a>
                 </div>
-                <div class="captura-item">
-                    <img src="capturas/06-paginas-extra.png" alt="Factura de varias hojas con páginas adicionales en el mismo apunte">
-                    <p class="captura-pie">¿La factura tiene varias hojas? Las añades todas al mismo apunte.</p>
-                </div>
-                <div class="captura-item">
-                    <img src="capturas/05-subir-documento.png" alt="Menú para subir una foto o un PDF guardado en el móvil">
-                    <p class="captura-pie">¿Ya tienes el documento? Súbelo desde el móvil: una foto o un PDF.</p>
-                </div>
-                <div class="captura-item">
-                    <img src="capturas/03-historial.png" alt="Historial trimestral con todos los movimientos">
-                    <p class="captura-pie">Historial: tus ingresos y gastos del trimestre.</p>
-                </div>
-                <div class="captura-item">
-                    <img src="capturas/04-exportar.png" alt="Pantalla de exportar trimestre al gestor">
-                    <p class="captura-pie">Exportar: PDF, Excel y ZIP de fotos. Para tu gestor.</p>
-                </div>
+
             </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="seccion">
-        <div class="contenedor contenedor-estrecho">
-            <h2 class="centrado">Preguntas frecuentes</h2>
-
-            <div class="pregunta">
-                <h3>¿Mis datos están seguros?</h3>
-                <p>Sí. Apunta guarda todo en tu móvil, cifrado con una contraseña que solo tú conoces. No usamos servidores. No vemos tus datos. No los compartimos con nadie.</p>
-            </div>
-
-            <div class="pregunta">
-                <h3>¿Necesito conexión a internet?</h3>
-                <p>No. Apunta funciona sin internet. La cámara, la lectura de facturas y la organización por trimestres trabajan todo en tu móvil. Solo necesitarás conexión cuando quieras enviar el resumen del trimestre a tu gestor por email o WhatsApp, o si activas la copia de seguridad cifrada en tu Google Drive personal.</p>
-            </div>
-
-            <div class="pregunta">
-                <h3>¿Sustituye a mi gestor?</h3>
-                <p>No. Apunta NO es un gestor ni un asesor fiscal. Apunta es una herramienta para que tú tengas tus facturas ordenadas y se las entregues a tu gestor de forma clara. Tu gestor sigue haciendo su trabajo: presentar tus modelos, asesorarte y resolver tus dudas fiscales.</p>
-            </div>
-
-            <div class="pregunta">
-                <h3>¿Funciona con cualquier factura?</h3>
-                <p>Apunta lee tickets de gasolinera, restaurantes, supermercados, ferreterías, facturas de teléfono, suministros y facturas profesionales emitidas en plantillas habituales. Si algún campo no se detecta bien, lo puedes editar a mano. Es rápido.</p>
-            </div>
-
-            <div class="pregunta">
-                <h3>¿Cuánto cuesta?</h3>
-                <p>49,99 € (IVA incluido). Pago único. Para siempre. Sin suscripciones, sin renovaciones, sin sorpresas. Sin publicidad nunca.</p>
-            </div>
-
-            <div class="pregunta">
-                <h3>¿En qué móviles funciona?</h3>
-                <p>Apunta está disponible para Android (móviles con Android 8 o superior) y para iPhone (iOS 15.5 o superior).</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="seccion seccion-clara">
-        <div class="contenedor contenedor-estrecho centrado">
-            <h2>Contacto</h2>
-            <p class="texto-principal">¿Tienes una duda, sugerencia o has visto algo raro?</p>
-            <p class="contacto-email">Escríbenos a <a href="mailto:apunta@apuntaapp.com">apunta@apuntaapp.com</a></p>
-            <p class="texto-secundario">Te respondemos en 24-48 horas laborables.</p>
         </div>
     </section>
 

@@ -586,3 +586,277 @@ p {
         gap: 40px;
     }
 }
+
+
+/* ============================================
+   PORTADA - LOS DOS CAMINOS
+   Anadido al partir la web en tres paginas.
+   Mismos colores, misma tipografia y la misma
+   tarjeta que ya usa "Como funciona" (.paso).
+   ============================================ */
+
+/* El hero de la portada no lleva captura al lado: una sola columna. */
+.hero-portada .contenedor {
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+.hero-portada .hero-contenido {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.hero-portada .hero-subtitulo {
+    margin-bottom: 0;
+}
+
+.caminos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 16px;
+}
+
+/* Misma tarjeta que .paso. Columna flex para que los dos bloques midan lo
+   mismo y los dos botones queden a la misma altura aunque el texto de uno
+   sea mas largo. */
+.camino {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 32px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.camino:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(45, 90, 61, 0.1);
+}
+
+.camino-quien {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #606060;
+    margin-bottom: 12px;
+}
+
+.camino h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+}
+
+.camino-texto {
+    color: #505050;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.camino-precio {
+    color: #606060;
+    font-size: 1rem;
+    margin-bottom: 28px;
+}
+
+/* `margin-top: auto` empuja el boton abajo del todo: los dos quedan
+   alineados aunque las tarjetas tengan distinto texto. */
+.camino .boton-principal {
+    margin-top: auto;
+    align-self: center;
+}
+
+/* Banda discreta que enlaza una pagina con la otra. */
+.otra-plataforma {
+    background-color: #f5f9f6;
+    border-top: 1px solid #e5e5e5;
+    padding: 28px 0;
+    text-align: center;
+}
+
+.otra-plataforma p {
+    margin-bottom: 0;
+    color: #505050;
+}
+
+.enlace-otra-pagina a {
+    font-weight: 600;
+}
+
+/* ============================================
+   PAGINA DE GESTORIAS
+   ============================================ */
+
+/* La captura del escritorio es apaisada (1600x900), no un movil de pie:
+   ocupa el ancho de su columna con el mismo redondeo y la misma sombra
+   verde que ya usan las capturas del movil. */
+.captura-escritorio {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(45, 90, 61, 0.15);
+}
+
+/* Galeria de capturas apaisadas: DOS columnas.
+   Son apaisadas, asi que las tres de las del movil -que son verticales- no
+   valen: cada captura se quedaria en 384 px sobre el contenedor de 1200.
+
+   🔴 Y NO VUELVE A UNA. Estuvo a una columna un rato del 09/09/2026 para que
+   la tabla de apuntes se leyera a tamano de galeria. Ya no hace falta: desde
+   ese mismo dia LAS CAPTURAS SE AMPLIAN al pulsarlas -ver visor.js-, asi que
+   quien quiera leer una la abre. A dos columnas la pagina queda mas compacta
+   y se recorre mejor, que es lo que se gana.
+
+   Todo lo demas -redondeo, sombra, pie- es .captura-item de siempre. */
+.capturas-anchas {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* RESPONSIVE - TABLETS */
+@media (max-width: 1024px) {
+    .caminos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Apaisadas y a dos columnas no caben en una tableta: a una. */
+    .capturas-anchas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* RESPONSIVE - MOVILES */
+@media (max-width: 640px) {
+    .camino {
+        padding: 32px 24px;
+    }
+
+    .camino h2 {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ============================================
+   EL VISOR: AMPLIAR UNA CAPTURA AL PULSARLA
+   09/09/2026. Sin librerias y sin CDN: el resto
+   de la web no las usa. El marcado lo construye
+   visor.js, asi que las dos paginas solo llevan
+   la linea del <script>.
+   Colores, redondeos y sombras, los de siempre.
+   ============================================ */
+
+/* La captura se puede pulsar: que se note, y que se vea al tabular.
+   `.captura-escritorio` es la grande del hero de gestorias, que desde el
+   09/09/2026 tambien se amplia. Es la unica del hero que entra: la del hero
+   de autonomos lleva `.captura-movil` y se queda como estaba. */
+.captura-item img,
+.captura-escritorio {
+    cursor: zoom-in;
+}
+
+.captura-item img:focus-visible,
+.captura-escritorio:focus-visible {
+    outline: 3px solid #2d5a3d;
+    outline-offset: 3px;
+}
+
+.visor {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* La cabecera es sticky con z-index 100: el visor va por encima. */
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    /* El verde oscuro de la casa -el del hover de los botones-, no un negro
+       cualquiera. */
+    background-color: rgba(30, 61, 42, 0.88);
+}
+
+/* `hidden` por si solo no gana a `display: flex`. */
+.visor[hidden] {
+    display: none;
+}
+
+.visor-caja {
+    width: 100%;
+    max-width: 1400px;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.visor-imagen {
+    max-width: 100%;
+    /* Deja sitio al pie y a los margenes: la captura entera, sin recortar. */
+    max-height: calc(100vh - 160px);
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    background-color: white;
+}
+
+.visor-pie {
+    max-width: 800px;
+    margin-bottom: 0;
+    text-align: center;
+    /* El mismo gris verdoso que los textos del pie de pagina. */
+    color: #d8e6dc;
+    font-size: 0.95rem;
+}
+
+.visor-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: white;
+    font-family: inherit;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.visor-cerrar:hover {
+    background-color: rgba(255, 255, 255, 0.24);
+}
+
+.visor-cerrar:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+/* Con el visor abierto, la pagina de debajo no se mueve. */
+body.con-visor {
+    overflow: hidden;
+}
+
+/* RESPONSIVE - MOVILES */
+@media (max-width: 640px) {
+    .visor {
+        padding: 64px 12px 24px;
+    }
+
+    .visor-imagen {
+        max-height: calc(100vh - 180px);
+    }
+
+    .visor-cerrar {
+        top: 12px;
+        right: 12px;
+    }
+}
