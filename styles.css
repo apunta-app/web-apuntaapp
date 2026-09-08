@@ -860,3 +860,33 @@ body.con-visor {
         right: 12px;
     }
 }
+
+
+/* ============================================
+   EL PIE DE LA PORTADA: CUATRO BLOQUES
+   09/09/2026. La portada es de los dos
+   productos, asi que lleva los dos juegos de
+   textos legales. Las otras dos paginas siguen
+   con tres bloques y no cambian.
+   Mismo `gap`, mismos colores, misma tipografia.
+   ============================================ */
+
+.pie-cuatro {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
+/* 🔴 ESTAS DOS HACEN FALTA. `.pie-cuatro` va al final del fichero, asi que
+   gana por orden a las reglas de `.pie-contenido` que estan dentro de los
+   media queries de arriba -misma especificidad, una clase-. Sin repetirlas
+   aqui, el pie se quedaria a CUATRO columnas tambien en tableta y en movil. */
+@media (max-width: 1024px) {
+    .pie-cuatro {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .pie-cuatro {
+        grid-template-columns: 1fr;
+    }
+}
