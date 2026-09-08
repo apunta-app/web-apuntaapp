@@ -1,4 +1,4 @@
-// EL VISOR DE CAPTURAS — 09/09/2026.
+// EL VISOR DE CAPTURAS — 08/09/2026.
 //
 // Al pulsar una captura se abre grande, centrada, sobre un fondo oscuro
 // translucido. Se cierra con la X, pulsando fuera y con Escape.
@@ -16,7 +16,7 @@
 (function () {
     'use strict';
 
-    // Las de la galeria, y la grande del hero de gestorias (09/09/2026).
+    // Las de la galeria, y la grande del hero de gestorias (08/09/2026).
     //
     // 🔴 `.captura-escritorio` y no `.hero-imagen img`: esa clase es SOLO la
     // del hero de gestorias. El hero de autonomos lleva `.captura-movil`, y

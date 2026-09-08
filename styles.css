@@ -703,7 +703,7 @@ p {
    Son apaisadas, asi que las tres de las del movil -que son verticales- no
    valen: cada captura se quedaria en 384 px sobre el contenedor de 1200.
 
-   🔴 Y NO VUELVE A UNA. Estuvo a una columna un rato del 09/09/2026 para que
+   🔴 Y NO VUELVE A UNA. Estuvo a una columna un rato del 08/09/2026 para que
    la tabla de apuntes se leyera a tamano de galeria. Ya no hace falta: desde
    ese mismo dia LAS CAPTURAS SE AMPLIAN al pulsarlas -ver visor.js-, asi que
    quien quiera leer una la abre. A dos columnas la pagina queda mas compacta
@@ -740,7 +740,7 @@ p {
 
 /* ============================================
    EL VISOR: AMPLIAR UNA CAPTURA AL PULSARLA
-   09/09/2026. Sin librerias y sin CDN: el resto
+   08/09/2026. Sin librerias y sin CDN: el resto
    de la web no las usa. El marcado lo construye
    visor.js, asi que las dos paginas solo llevan
    la linea del <script>.
@@ -749,7 +749,7 @@ p {
 
 /* La captura se puede pulsar: que se note, y que se vea al tabular.
    `.captura-escritorio` es la grande del hero de gestorias, que desde el
-   09/09/2026 tambien se amplia. Es la unica del hero que entra: la del hero
+   08/09/2026 tambien se amplia. Es la unica del hero que entra: la del hero
    de autonomos lleva `.captura-movil` y se queda como estaba. */
 .captura-item img,
 .captura-escritorio {
@@ -864,7 +864,7 @@ body.con-visor {
 
 /* ============================================
    EL PIE DE LA PORTADA: CUATRO BLOQUES
-   09/09/2026. La portada es de los dos
+   08/09/2026. La portada es de los dos
    productos, asi que lleva los dos juegos de
    textos legales. Las otras dos paginas siguen
    con tres bloques y no cambian.
