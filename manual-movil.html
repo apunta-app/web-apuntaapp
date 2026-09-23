@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de Apunta App Móvil</title>
+<meta name="description" content="Manual de uso de Apunta App Móvil: cómo fotografiar tus facturas, revisarlas y mandárselas a tu gestor.">
+<meta name="keywords" content="apunta, manual apunta, app autónomos, facturas autónomo, OCR facturas, app gestor">
+<meta name="author" content="Evolution Studios S.L.">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph para redes sociales -->
+<meta property="og:title" content="Manual de Apunta App Móvil">
+<meta property="og:description" content="Cómo fotografiar tus facturas, revisarlas y mandárselas a tu gestor.">
+<meta property="og:url" content="https://apuntaapp.com/manual-movil.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+/* ===== Manual de Apunta App Móvil — estilos propios, todos dentro de .manual ===== */
+.manual {
+  --m-serif: Georgia, 'Times New Roman', serif;
+  --m-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --m-verde: #2D5A3D; --m-verde-claro: #E8F1EB; --m-verde-fondo: #F4F8F5;
+  --m-ambar: #E8A33D; --m-ambar-oscuro: #B07014;
+  --m-rojo: #B3261E; --m-rojo-claro: #FBEAE8;
+  --m-naranja: #D9730D; --m-gris: #6B6B6B; --m-texto: #222;
+  font-family: var(--m-sans); color: var(--m-texto); line-height: 1.65; font-size: 17px;
+  max-width: 900px; margin: 0 auto; padding: 0 20px 60px;
+}
+.manual * { box-sizing: border-box; }
+.manual img { max-width: 100%; height: auto; display: block; }
+.manual a { color: var(--m-verde); }
+.manual .portada { text-align: center; padding: 56px 0 36px; }
+.manual .portada .etiqueta { color: var(--m-ambar-oscuro); font-weight: 700; letter-spacing: .14em; font-size: 13px; text-transform: uppercase; margin: 0 0 10px; }
+.manual .portada h1 { font-family: var(--m-serif); color: var(--m-verde); font-size: clamp(32px, 5vw, 46px); margin: 0 0 12px; line-height: 1.15; }
+.manual .portada .sub { color: var(--m-gris); font-size: 19px; margin: 0 0 26px; }
+.manual .portada .lema { font-family: var(--m-serif); font-style: italic; color: var(--m-verde); font-size: 20px; margin: 26px 0 6px; }
+.manual .portada .version { color: var(--m-gris); font-size: 14px; margin: 0; }
+.manual .boton-pdf { display: inline-flex; align-items: center; gap: 10px; background: var(--m-verde); color: #fff; text-decoration: none;
+  font-weight: 600; padding: 13px 26px; border-radius: 999px; font-size: 16px; }
+.manual .boton-pdf:hover { filter: brightness(1.12); }
+.manual .indice { background: var(--m-verde-fondo); border-radius: 14px; padding: 26px 30px; margin: 10px 0 40px; }
+.manual .indice h2 { font-family: var(--m-serif); color: var(--m-verde); margin: 0 0 14px; font-size: 24px; border: 0; padding: 0; }
+.manual .indice ol { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 30px; }
+.manual .indice li { break-inside: avoid; margin: 0 0 10px; }
+.manual .indice a { display: flex; gap: 12px; align-items: baseline; text-decoration: none; color: var(--m-texto); }
+.manual .indice a:hover { color: var(--m-verde); text-decoration: underline; }
+.manual .indice .n { color: var(--m-ambar-oscuro); font-weight: 700; min-width: 20px; text-align: right; }
+.manual .cap { padding-top: 34px; scroll-margin-top: 90px; }
+.manual .cap-num { color: var(--m-ambar-oscuro); font-weight: 700; letter-spacing: .14em; font-size: 13px; text-transform: uppercase; margin: 0 0 4px; }
+.manual h2 { font-family: var(--m-serif); color: var(--m-verde); font-size: clamp(26px, 3.6vw, 32px); line-height: 1.2;
+  margin: 0 0 22px; padding-bottom: 12px; border-bottom: 3px solid var(--m-verde); }
+.manual h3 { font-family: var(--m-serif); color: var(--m-verde); font-size: 21px; margin: 30px 0 10px; }
+.manual p { margin: 0 0 14px; font-size: inherit; } /* la web pone 1.1rem a todo p */
+.manual .ref { color: var(--m-verde); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.manual .ref:hover { text-decoration: underline; }
+.manual .llamadas, .manual .marcas, .manual .lado-texto { margin: 0 0 16px; }
+.manual .ll, .manual .mk { display: flex; gap: 12px; align-items: flex-start; margin: 0 0 10px; font-size: 16px; }
+.manual .ll .n { flex: 0 0 28px; height: 28px; border-radius: 50%; background: var(--m-ambar); border: 2px solid var(--m-ambar-oscuro);
+  color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+.manual .mk .n { flex: 0 0 26px; height: 26px; border-radius: 50%; color: #fff; font-weight: 700; font-size: 14px;
+  display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+.manual .mk-verde .n { background: var(--m-verde); } .manual .mk-naranja .n { background: var(--m-naranja); } .manual .mk-gris .n { background: #8A8A8A; }
+.manual .caja { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 14px 20px 6px; margin: 6px 0 20px; }
+.manual .caja.consejo { background: var(--m-verde-claro); border-color: var(--m-verde); }
+.manual .caja.atencion { background: var(--m-rojo-claro); border-color: var(--m-rojo); }
+.manual .caja-tit { font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 4px; }
+.manual .consejo .caja-tit { color: var(--m-verde); } .manual .atencion .caja-tit { color: var(--m-rojo); }
+.manual figure { margin: 8px 0 22px; }
+.manual figcaption { text-align: center; font-style: italic; color: var(--m-gris); font-size: 14px; margin-top: 8px; }
+.manual figure.ancha img { margin: 0 auto; border-radius: 6px; }
+.manual .fig-par { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin: 10px 0 8px; }
+.manual .fig-par figure { margin: 0; }
+.manual figure.movil img { margin: 0 auto; max-width: 340px; width: 100%; }
+.manual .fig-lado { display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: 30px; align-items: center; margin: 10px 0 20px; }
+.manual .fig-lado figure { margin: 0; }
+.manual .tabla { overflow-x: auto; margin: 6px 0 22px; }
+.manual table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 560px; }
+.manual th { background: var(--m-verde); color: #fff; text-align: left; padding: 10px 12px; font-weight: 600; }
+.manual td { padding: 10px 12px; border-bottom: 1px solid #D5DDD8; vertical-align: top; }
+.manual tbody tr:nth-child(even) td { background: var(--m-verde-fondo); }
+.manual .volver { text-align: right; font-size: 14px; margin-top: 10px; }
+.manual .volver a { color: var(--m-gris); text-decoration: none; }
+.manual .volver a:hover { color: var(--m-verde); }
+.manual .cierre { text-align: center; margin-top: 50px; padding-top: 26px; border-top: 1px solid #D5DDD8; }
+.manual .cierre .lema { font-family: var(--m-serif); font-style: italic; color: var(--m-verde); font-size: 20px; margin-bottom: 18px; }
+.manual .legal { color: #8A8A8A; font-size: 12.5px; max-width: 680px; margin: 18px auto 0; }
+@media (max-width: 720px) {
+  .manual { font-size: 16px; }
+  .manual .indice ol { columns: 1; }
+  .manual .fig-par { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .manual .fig-lado { grid-template-columns: 1fr; gap: 14px; }
+  .manual figure.movil img { max-width: 300px; }
+}
+</style>
+</head>
+<body>
+    <!-- CABECERA -->
+    <header class="header">
+        <div class="contenedor">
+            <a href="index.html" class="logo">
+                <img src="logo-apunta.png" alt="Apunta" class="logo-imagen">
+            </a>
+            <nav class="navegacion">
+                <ul>
+                    <li><a href="autonomos.html#inicio">Inicio</a></li>
+                    <li><a href="autonomos.html#para-quien">Para quién</a></li>
+                    <li><a href="autonomos.html#como-funciona">Cómo funciona</a></li>
+                    <li><a href="autonomos.html#faq">FAQ</a></li>
+                    <li><a href="autonomos.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<main class="manual">
+
+<header class="portada">
+  <p class="etiqueta">Manual de uso</p>
+  <h1>Apunta App Móvil</h1>
+  <p class="sub">Todo lo que necesitas para fotografiar tus facturas, revisarlas y mandárselas a tu gestor.</p>
+  <a class="boton-pdf" href="manual-movil/Manual-Apunta-App-Movil.pdf" download>⬇&nbsp; Descargar el manual en PDF</a>
+  <p class="lema">Apunta... Y olvídate.</p>
+  <p class="version">Versión 1.5.0 · Septiembre de 2026</p>
+</header>
+
+<nav class="indice" id="indice" aria-label="Índice del manual">
+  <h2>Índice</h2>
+  <ol>
+<li><a href="#cap1"><span class="n">1</span>Para qué sirve Apunta App</a></li>
+<li><a href="#cap2"><span class="n">2</span>La primera vez que la abres</a></li>
+<li><a href="#cap3"><span class="n">3</span>Hacer una foto a una factura</a></li>
+<li><a href="#cap4"><span class="n">4</span>Lo que Apunta App ha entendido (y cómo lo corriges)</a></li>
+<li><a href="#cap5"><span class="n">5</span>¿Ingreso o gasto?</a></li>
+<li><a href="#cap6"><span class="n">6</span>Tu trimestre de un vistazo</a></li>
+<li><a href="#cap7"><span class="n">7</span>Buscar un apunte</a></li>
+<li><a href="#cap8"><span class="n">8</span>Exportar: mandárselo a tu gestor</a></li>
+<li><a href="#cap9"><span class="n">9</span>Tus datos y tu número de cliente</a></li>
+<li><a href="#cap10"><span class="n">10</span>La copia de seguridad</a></li>
+<li><a href="#cap11"><span class="n">11</span>Preguntas frecuentes</a></li>
+  </ol>
+</nav>
+
+<section class="cap" id="cap1"><p class="cap-num">Capítulo 1</p><h2>Para qué sirve Apunta App</h2>
+<p>Apunta App guarda tus facturas y tus tickets según te los dan, y te los tiene ordenados para cuando toque presentar el trimestre.</p>
+<p>Haces una foto. La app lee el papel y rellena sola la fecha, el NIF del proveedor, la base, el IVA y el total. Tú le echas un vistazo, corriges lo que haga falta y ya está: ese gasto queda guardado en su trimestre. Al final del trimestre pulsas Exportar y se lo mandas a tu gestor por WhatsApp, por correo o como quieras. Él recibe todo junto y ordenado: un PDF con el listado, un Excel con los números y las fotos de todas las facturas. Se acabaron la caja de zapatos y el sobre de tickets arrugados.</p>
+<p>Tres cosas que conviene saber desde el principio: todo se queda en tu móvil (no hay registro, ni cuenta, ni contraseña, ni nube; tus facturas no salen de tu teléfono hasta el día que tú decides mandárselas a tu gestor); se paga una vez, sin cuota mensual; y funciona sin cobertura, porque la app lee el papel ella sola.</p>
+<p>Lo que Apunta App no hace: no emite facturas a tus clientes, no presenta modelos a Hacienda y no sustituye a tu gestor. Lo que hace es llevarle el trabajo hecho.</p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap2"><p class="cap-num">Capítulo 2</p><h2>La primera vez que la abres</h2>
+<p>Al abrir Apunta App por primera vez te encuentras con esta pantalla. No te pide registrarte, ni un correo, ni una contraseña: no hay ninguna cuenta que crear.</p>
+<div class="fig-lado"><figure class="movil"><img src="manual-movil/c2_01.webp" alt="La primera pantalla" loading="lazy"><figcaption>La primera pantalla</figcaption></figure><div class="lado-texto"><p class="ll"><span class="n">1</span><span class="t"><strong>«Tus datos viven solo en tu móvil».</strong> Es la promesa de la app: lo que apuntas se queda en este teléfono y nadie más lo ve.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Empezar de cero.</strong> Si es la primera vez que usas Apunta App, pulsa aquí.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Cargar mi copia de seguridad.</strong> Si ya usabas la app en otro móvil, o la has vuelto a instalar, y tienes tu copia, pulsa aquí para recuperar tus apuntes. <a class="ref" href="#cap10">→ capítulo 10</a></span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Términos y Política de privacidad.</strong> Al continuar, los aceptas. Si quieres leerlos antes, púlsalos.</span></p></div></div>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Lo primero que conviene hacer:</strong> entra en Ajustes y escribe tu nombre y tu NIF. Son los datos con los que tu gestor sabrá de quién es cada exportación. <a class="ref" href="#cap9">→ capítulo 9</a></p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap3"><p class="cap-num">Capítulo 3</p><h2>Hacer una foto a una factura</h2>
+<p>Todo empieza en la pantalla de Inicio, en <strong>¿Qué quieres apuntar?</strong>. Tienes dos botones grandes, uno para cada cosa. Pulsas el que toca y se abre la cámara. <strong>No necesitas cobertura:</strong> la lectura la hace el propio teléfono, así que puedes apuntar un ticket en un aparcamiento subterráneo o en mitad del campo.</p>
+<div class="fig-par"><figure class="movil"><img src="manual-movil/c3_08.webp" alt="Inicio: los dos botones grandes" loading="lazy"><figcaption>Inicio: los dos botones grandes</figcaption></figure><figure class="movil"><img src="manual-movil/c3_04.webp" alt="La cámara, con un ticket en el visor" loading="lazy"><figcaption>La cámara, con un ticket en el visor</figcaption></figure></div>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>INGRESO.</strong> Para lo que cobras: una factura que tú has hecho a un cliente, un cobro.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>GASTO.</strong> Para lo que pagas: un ticket, una factura que te han hecho a ti.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Subir foto/PDF guardado en el móvil.</strong> Para cuando la factura no está en papel: te ha llegado en PDF por correo, o ya tenías la foto hecha. <a class="ref" href="#cap5">→ capítulo 5</a></span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Lo que estás apuntando.</strong> Arriba, la app te recuerda qué va a leer.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>El papel, en el visor.</strong> Encuádralo entero, que se vean bien la fecha, los importes y el total.</span></p><p class="ll"><span class="n">6</span><span class="t"><strong>El botón de disparar.</strong> Lo pulsas y la app se pone a leer.</span></p></div>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Para que la app lea bien:</strong> el papel plano y estirado, buena luz y sin sombras encima, el ticket entero dentro del visor y el móvil quieto. Y hazle la foto a los tickets el mismo día: los de papel térmico se borran con el tiempo.</p></div>
+<p>Después de la foto pasas a la pantalla de revisión, que es la del capítulo siguiente.</p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap4"><p class="cap-num">Capítulo 4</p><h2>Lo que Apunta App ha entendido (y cómo lo corriges)</h2>
+<p>Después de la foto, la app te enseña lo que ha leído y te pregunta si está bien. Arriba tienes el papel y debajo los datos que ha sacado de él, así comparas de un vistazo sin cambiar de pantalla. Tú revisas, completas lo que falte, corriges lo que haga falta y guardas.</p>
+<div class="fig-lado"><figure class="movil"><img src="manual-movil/c4_05.webp" alt="Un taxi, recién leído" loading="lazy"><figcaption>Un taxi, recién leído</figcaption></figure><div class="lado-texto"><p class="ll"><span class="n">1</span><span class="t"><strong>La foto.</strong> Tu ticket o tu factura. Compara con ella cada dato de debajo.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Más imágenes/fotos.</strong> Añade más páginas del mismo documento, hasta 10, con la cámara, desde la galería o en PDF. No se leen ni suman importe.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Justificante.</strong> Solo en los gastos: el justificante del pago, por ejemplo el recibo de la tarjeta. Tampoco suma, y lo puedes cambiar o quitar.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Número de factura.</strong> En un gasto lo escribes tú: la app no lo lee.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Total.</strong> El importe total, con el IVA incluido.</span></p><p class="ll"><span class="n">6</span><span class="t"><strong>Fecha.</strong> Con el calendario la cambias.</span></p><p class="ll"><span class="n">7</span><span class="t"><strong>«Esta fecha es de otro trimestre».</strong> Lo explicamos más abajo.</span></p><p class="ll"><span class="n">8</span><span class="t"><strong>IVA.</strong> El tipo; aquí, un 10 %.</span></p><p class="ll"><span class="n">9</span><span class="t"><strong>Cantidad de IVA.</strong> La cuota. Compárala con la del papel.</span></p><p class="ll"><span class="n">10</span><span class="t"><strong>Retención IRPF.</strong> Solo si la factura lleva retención. En un ticket normal se deja vacía.</span></p><p class="ll"><span class="n">11</span><span class="t"><strong>Nombre del proveedor.</strong> Lo escribes tú: la app no lo lee.</span></p><p class="ll"><span class="n">12</span><span class="t"><strong>NIF/CIF del proveedor.</strong> Este sí lo lee la app.</span></p><p class="ll"><span class="n">13</span><span class="t"><strong>Aviso del NIF.</strong> Lo explicamos más abajo.</span></p><p class="ll"><span class="n">14</span><span class="t"><strong>Concepto.</strong> Una descripción corta que escribes tú: «Taxi al aeropuerto».</span></p><p class="ll"><span class="n">15</span><span class="t"><strong>Guardar gasto.</strong> En un ingreso pone «Guardar factura», y al corregir un apunte, «Guardar cambios».</span></p></div></div>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Sin fecha o sin % de IVA, la app no te deja guardar.</strong> Son los dos datos sin los que un apunte no le sirve a tu gestor.</p></div>
+<h3>Los avisos en naranja</h3>
+<p>Cuando la app no está segura de algo, no se lo inventa: te lo dice con un aviso en naranja justo debajo del dato. Hay cuatro: «No he sabido leer la fecha», «Esta fecha es de otro trimestre», «No he sabido leer el % de IVA» y «He corregido el último carácter del NIF».</p>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Mira todas las casillas, no solo las que tienen aviso.</strong> Lo que la app no ha sabido leer y no está en esa lista (el número de factura, el NIF, la retención o el total) lo deja vacío, sin avisar.</p></div>
+<p>Esta es la factura de un seguro, que no lleva IVA:</p>
+<div class="fig-lado"><figure class="movil"><img src="manual-movil/c4_06.webp" alt="Un seguro, con avisos en naranja" loading="lazy"><figcaption>Un seguro, con avisos en naranja</figcaption></figure><div class="lado-texto"><p class="ll"><span class="n">16</span><span class="t"><strong>En el papel pone «Exento».</strong> Los seguros no llevan IVA.</span></p><p class="ll"><span class="n">17</span><span class="t"><strong>«Elegir IVA».</strong> La app no ha sabido qué tipo poner y lo ha dejado sin elegir.</span></p><p class="ll"><span class="n">18</span><span class="t"><strong>«No he sabido leer el % de IVA».</strong> La app solo entiende números, y la palabra «Exento» no la convierte. Abre el desplegable y elige la opción que corresponda a una factura exenta.</span></p><p class="ll"><span class="n">19</span><span class="t"><strong>Cantidad de IVA: 0,00.</strong> No la ha leído del papel: es lo que pone la app mientras no hay un tipo elegido.</span></p><p class="ll"><span class="n">20</span><span class="t"><strong>NIF del proveedor.</strong> Leído sin problemas.</span></p></div></div>
+<h3>El aviso «Esta fecha es de otro trimestre»</h3>
+<p>La app compara la fecha del papel con la de hoy. En las dos pantallas de arriba sale porque son facturas de febrero y marzo, del primer trimestre, apuntadas en septiembre, que ya es el tercero.</p>
+<p>Casi siempre quiere decir una de dos cosas: que estás apuntando una factura atrasada, o que la app ha leído mal la fecha (un año por otro, un mes por otro). Mira la fecha del papel. Si está bien, no toques nada: el apunte se guarda en el trimestre que le corresponde por su fecha. Si está mal, corrígela.</p>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Ojo con las facturas atrasadas.</strong> Si ya le mandaste a tu gestor el trimestre de esa factura, el apunte nuevo no le llega solo. Díselo, o vuelve a exportarle ese trimestre. <a class="ref" href="#cap8">→ capítulo 8</a></p></div>
+<h3>El aviso del NIF</h3>
+<p>Todo NIF lleva una letra de control al final. Si al leerlo la app ve que esa letra no cuadra con los números, la corrige y te avisa. Compara el NIF con el del papel: si coincide, déjalo como está; si no, escríbelo bien.</p>
+<h3>Cómo lee Apunta App tu factura</h3>
+<p>La app no entiende la factura como la entenderías tú. Primero, el teléfono convierte la foto en texto, renglón a renglón: es lo que se llama OCR (reconocimiento óptico de caracteres). Después, la app busca en ese texto las palabras y los números que le interesan. Por eso lo que acierta o falla depende sobre todo de qué palabras lleva el papel y de lo bien que se lean.</p>
+<h3>Lo que ve el teléfono</h3>
+<p>Este es el ticket del taxi y, a su lado, el texto que ha sacado de él el teléfono. Fíjate en que no hay columnas, ni negritas, ni recuadros: solo renglones de letras y números. De ahí saca la app cada dato.</p>
+<figure class="ancha"><img src="manual-movil/c4_visto.webp" alt="La foto buena y lo que ha leído el teléfono, tal cual" loading="lazy"><figcaption>La foto buena y lo que ha leído el teléfono, tal cual</figcaption></figure>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Tú también puedes verlo.</strong> En la pantalla de revisión, baja hasta el final, por debajo de «Guardar gasto», y pulsa <strong>Ver texto detectado por OCR</strong>. Se despliega el texto que ha leído el teléfono. Si una casilla ha salido vacía o rara, ahí ves por qué.</p></div>
+<p><strong>El total.</strong> Busca «TOTAL», «IMPORTE TOTAL» o «A PAGAR» y el importe que va al lado. Si hay varios, descarta los de «entregado» y «cambio» y se queda con el más alto.</p>
+<p><strong>La fecha.</strong> La primera fecha válida del papel, escrita como 18/02/2026, 2026-02-18 o «18 de febrero de 2026». Descarta las de hace más de diez años y las del futuro.</p>
+<p><strong>El IVA.</strong> Primero intenta que cuadren tres números del papel: la base por el tipo da la cuota, y la base más la cuota da el total. Si cuadran, se fía de los tres. Si no, busca un número detrás de la palabra «IVA». Solo acepta los tipos españoles: 21, 10, 4 y 0 %.</p>
+<p><strong>La retención.</strong> El primer importe que va detrás de «IRPF», «Retención» o «Ret.».</p>
+<p><strong>El NIF del proveedor.</strong> Prefiere el que lleva delante «NIF», «CIF» o «DNI», comprueba la letra y se salta el tuyo. Por eso conviene tener tu NIF en Ajustes. <a class="ref" href="#cap9">→ capítulo 9</a></p>
+<p><strong>Lo que no lee en un gasto:</strong> el nombre del proveedor, el concepto y el número de factura. Esos los escribes tú.</p>
+<p><strong>La foto no se retoca.</strong> La app solo la endereza; no la aclara ni la mejora. Aguanta un papel algo torcido, pero si el teléfono no llega a ver un número, esa casilla sale vacía o con aviso. Por eso importa tanto hacer bien la foto. <a class="ref" href="#cap3">→ capítulo 3</a></p>
+<p><strong>Un PDF con texto se lee directamente.</strong> Si subes un PDF que ya trae el texto dentro, como muchas facturas que llegan por correo, la app no tiene que leer la imagen: usa ese texto tal cual.</p>
+<h3>Dos ejemplos de verdad</h3>
+<p>Estas son las lecturas reales del ticket del taxi y de la factura del seguro. En <strong>verde</strong>, lo que la app ha usado; en <strong>naranja</strong>, de dónde sale un aviso o un hueco; en <strong>gris punteado</strong>, lo que la app ve y deja fuera a propósito.</p>
+<div class="fig-lado"><figure class="movil"><img src="manual-movil/c4_ocr_taxi.webp" alt="Lo que ha leído la app en el taxi" loading="lazy"><figcaption>Lo que ha leído la app en el taxi</figcaption></figure><div class="lado-texto"><p class="mk mk-verde"><span class="n">1</span><span class="t"><strong>Total, 31,50 €.</strong> De la palabra TOTAL y el importe de su línea.</span></p><p class="mk mk-verde"><span class="n">2</span><span class="t"><strong>Base, 28,64 €,</strong> leída del papel.</span></p><p class="mk mk-verde"><span class="n">3</span><span class="t"><strong>IVA, 10 % y 2,86 €.</strong> La cuenta cuadra: 28,64 × 10 % = 2,86, y 28,64 + 2,86 = 31,50. Por eso la app se fía de los tres números.</span></p><p class="mk mk-verde"><span class="n">4</span><span class="t"><strong>Fecha, 18/02/2026.</strong> La primera fecha válida del papel.</span></p><p class="mk mk-naranja"><span class="n">5</span><span class="t"><strong>NIF del taxista, 22104887R.</strong> El papel lo escribe con puntos y la app avisa de que ha corregido la letra. La letra ya estaba bien: como coincide con el papel, se deja así.</span></p><p class="mk mk-gris"><span class="n">6</span><span class="t"><strong>El NIF de Candela.</strong> Es el suyo, el que tiene en Ajustes, así que la app lo salta y se queda con el del taxista.</span></p></div></div>
+<figure class="ancha"><img src="manual-movil/c4_ocr_seguro.webp" alt="Lo que ha leído la app en la factura del seguro" loading="lazy"><figcaption>Lo que ha leído la app en la factura del seguro</figcaption></figure>
+<div class="marcas"><p class="mk mk-verde"><span class="n">1</span><span class="t"><strong>Total, 410,40 €.</strong> De TOTAL FACTURA y el importe de su línea.</span></p></div>
+<div class="marcas"><p class="mk mk-verde"><span class="n">2</span><span class="t"><strong>Fecha, 01/03/2026.</strong></span></p></div>
+<div class="marcas"><p class="mk mk-verde"><span class="n">3</span><span class="t"><strong>CIF del proveedor, A46118808.</strong> El número sale limpio y la letra de control cuadra.</span></p></div>
+<div class="marcas"><p class="mk mk-gris"><span class="n">4</span><span class="t"><strong>El NIF de Candela,</strong> que la app salta.</span></p></div>
+<div class="marcas"><p class="mk mk-naranja"><span class="n">5</span><span class="t"><strong>«Exento».</strong> La app solo entiende un número como tipo de IVA; la palabra no la convierte en exento. Por eso el % queda vacío y sale el aviso.</span></p></div>
+<div class="marcas"><p class="mk mk-naranja"><span class="n">6</span><span class="t"><strong>«exenta de I.V.A. … artículo 20».</strong> El primer número detrás de «I.V.A.» es el 20 del artículo. Un 20 % no es un IVA español, así que lo descarta.</span></p></div>
+<div class="marcas"><p class="mk mk-gris"><span class="n">7</span><span class="t"><strong>Número de factura.</strong> En un gasto no lo lee: lo escribes tú.</span></p></div>
+<h3>Cuando la foto no sale bien</h3>
+<p>El teléfono lee lo que ve. Si la foto sale oscura, movida o borrosa, confunde letras y números: un 0 por una O, un 10 % por un 18 %, un 1,20 por un 1,26. Para enseñarlo, hemos cogido la foto buena del taxi y la hemos estropeado a propósito de ocho maneras. Todas se han pasado por el mismo lector que usa la app.</p>
+<figure class="ancha"><img src="manual-movil/c4_malas.webp" alt="La misma foto del taxi, estropeada a propósito de ocho maneras" loading="lazy"><figcaption>La misma foto del taxi, estropeada a propósito de ocho maneras</figcaption></figure>
+<div class="tabla"><table><thead><tr><th>Foto</th><th>Lo que leyó mal el teléfono</th><th>Lo que pasa en la revisión</th></tr></thead><tbody><tr><td><strong>a · oscura</strong></td><td>«1,20» → «1,26» · «JOSE» → «J0SE», con un cero</td><td>El NIF sale vacío, sin aviso.</td></tr><tr><td><strong>b · movida</strong></td><td>«I.V.A. 10%» → «I.V.A. 18%» · «24,90» → «24,98»</td><td>Todo bien: la app saca el 10 % de las cuentas del ticket, no de ese renglón.</td></tr><tr><td><strong>c · desenfocada</strong></td><td>«10%» → «10», sin el % · «BASE IMPONIBLE» → «BASE IHPONTBLE»</td><td>El NIF sale vacío, sin aviso.</td></tr><tr><td><strong>d · torcida</strong></td><td>La fecha acaba en otro renglón y como «18/82/2826»</td><td>La fecha sale vacía, con aviso.</td></tr><tr><td><strong>e · con sombra</strong></td><td>Bajo la sombra se pierden los rótulos: de «I.V.A. 10% 2,86» solo queda «2,86»</td><td>El % de IVA, sin elegir y con aviso; la cantidad de IVA, a 0,00.</td></tr><tr><td><strong>f · borrada</strong></td><td>«JOSE» → «30SE» · «31,50 €» → «31,50 e»</td><td>El NIF sale vacío, sin aviso.</td></tr><tr><td><strong>g · arrugada</strong></td><td>«Recibo válido como factura» → «Recib0 actura» · «46010» → «46019»</td><td>La fecha sale vacía, con aviso.</td></tr><tr><td><strong>x · casi no lee</strong></td><td>Solo 10 renglones de 26 · «TOTAL 31,50 €» → «TOTAL 31 50€» · la fecha, «1662/2026»</td><td>Total <strong>50,00 €</strong>, sin aviso. Fecha y % de IVA vacíos, con aviso. NIF vacío.</td></tr></tbody></table></div>
+<p>La última es la que más enseña. El teléfono leyó «31 50» con un espacio en lugar de la coma, y la app se quedó con el 50. La fecha y el IVA salen vacíos y avisados, pero <strong>el total sale mal y sin aviso</strong>:</p>
+<figure class="ancha"><img src="manual-movil/c4_casi_no_lee.webp" alt="La foto que casi no se lee, y cómo queda la revisión" loading="lazy"><figcaption>La foto que casi no se lee, y cómo queda la revisión</figcaption></figure>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Compara siempre el total con el papel antes de guardar.</strong> Si el teléfono lee mal un importe, la app no tiene forma de saberlo: lo pone tal cual, sin aviso.</p></div>
+<h3>Por qué falla, y cómo evitarlo</h3>
+<p>El lector aguanta bastante. En las pruebas, una sombra sin más, un ticket algo arrugado o un poco torcido se leyeron bien. Lo que más le cuesta es <strong>la poca luz</strong>, sobre todo con el grano que sale en las fotos oscuras, <strong>la foto movida o desenfocada</strong> y <strong>el papel borrado</strong>. Cuando falla, casi siempre es por la foto, no por la app.</p>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Para una buena foto:</strong> busca buena luz y que no caiga tu sombra ni la del móvil sobre el papel. Pon el ticket plano y estirado, y hazle la foto de frente, no de lado. Espera a que se vea nítido en la pantalla y aguanta el móvil quieto al disparar. Y a los tickets de papel térmico hazles la foto el mismo día, antes de que se borren.</p></div>
+<p>Si ves muchas casillas vacías o muchos avisos, suele compensar repetir la foto antes que escribirlo todo a mano. Y si un dato sale mal, escríbelo tú: el papel manda.</p>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>La app prefiere dejar un hueco a inventarse un dato.</strong> Un aviso o una casilla vacía no es un fallo: es la app diciéndote dónde mirar.</p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap5"><p class="cap-num">Capítulo 5</p><h2>¿Ingreso o gasto?</h2>
+<p>Apunta App lleva por separado lo que cobras y lo que pagas, porque para tu gestor son dos libros distintos: el de ingresos y el de gastos.</p>
+<p><strong>Ingreso</strong> es lo que tú facturas o cobras: una factura que haces a un cliente. <strong>Gasto</strong> es lo que pagas: el ticket de la gasolina, la factura del seguro, una comida de trabajo.</p>
+<p>Si empiezas desde los botones grandes de Inicio, ya se lo dices al pulsar INGRESO o GASTO. <a class="ref" href="#cap3">→ capítulo 3</a></p>
+<p>Cuando subes una foto o un PDF que ya tenías en el móvil, la app no sabe qué es, así que te lo pregunta con esta ventana:</p>
+<div class="fig-lado"><figure class="movil"><img src="manual-movil/c5_07.webp" alt="¿Qué es esta foto?" loading="lazy"><figcaption>¿Qué es esta foto?</figcaption></figure><div class="lado-texto"><p class="ll"><span class="n">1</span><span class="t"><strong>¿Qué es esta foto?</strong> La app necesita saberlo antes de leerla.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Ingreso (factura emitida).</strong> Una factura que has hecho tú.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Gasto (ticket o factura recibida).</strong> Algo que has pagado tú.</span></p></div></div>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Una regla fácil:</strong> si la factura la has hecho tú, es un ingreso. Si te la han hecho a ti y has pagado tú, es un gasto.</p></div>
+<p>Luego los distingues de un vistazo: en la revisión, la cabecera de un gasto sale en rojo («¿Está bien el gasto?»), y en el historial los ingresos llevan una flecha verde hacia arriba y los gastos una flecha roja hacia abajo. <a class="ref" href="#cap7">→ capítulo 7</a></p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap6"><p class="cap-num">Capítulo 6</p><h2>Tu trimestre de un vistazo</h2>
+<p>Arriba de la pantalla de Inicio tienes cómo va el trimestre, sin hacer ninguna cuenta.</p>
+<div class="fig-lado"><figure class="movil"><img src="manual-movil/c6_08.webp" alt="Inicio: el resumen del trimestre" loading="lazy"><figcaption>Inicio: el resumen del trimestre</figcaption></figure><div class="lado-texto"><p class="ll"><span class="n">1</span><span class="t"><strong>El trimestre.</strong> T1 2026 son enero, febrero y marzo. Pulsa la flecha para ver otro.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Te queda.</strong> Lo que has ingresado menos lo que has gastado: 4.245,23 − 1.990,82 = 2.254,41 €.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Ingresado.</strong> La suma de tus ingresos del trimestre.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Gastado.</strong> La suma de tus gastos.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>IRPF retenido.</strong> Lo que te han retenido de IRPF en tus facturas.</span></p><p class="ll"><span class="n">6</span><span class="t"><strong>IVA a liquidar.</strong> El IVA que has cobrado en tus facturas menos el que has pagado en tus gastos.</span></p><p class="ll"><span class="n">7</span><span class="t"><strong>Apuntes con varios tipos de IVA.</strong> Lo explicamos más abajo.</span></p><p class="ll"><span class="n">8</span><span class="t"><strong>Exportar este trimestre.</strong> <a class="ref" href="#cap8">→ capítulo 8</a></span></p></div></div>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>«Te queda» no es lo que ganas limpio.</strong> Es una resta de totales, con el IVA dentro, y no descuenta los impuestos que te toque pagar. Te sirve para saber cómo va el trimestre; las cuentas de verdad las hace tu gestor.</p></div>
+<h3>Si el IVA a liquidar sale en negativo</h3>
+<p>Como en el ejemplo (−104,46 €), quiere decir que este trimestre has pagado más IVA en tus gastos del que has cobrado en tus facturas. Qué se hace con esa diferencia lo decide tu gestor.</p>
+<h3>«Apuntes con varios tipos de IVA sin desglosar»</h3>
+<p>Algunos papeles llevan varios tipos de IVA a la vez; por ejemplo, un ticket del supermercado con productos al 4 %, al 10 % y al 21 %. Cuando la app ve dos tipos o más, pone «Varios» en el IVA y deja vacía la cantidad de IVA, para que escribas tú la suma de todas las cuotas. En la app no se reparte por tipos: eso lo hace tu gestor con la foto delante. Si dejas la cantidad vacía, el apunte queda «sin desglosar».</p>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Escribe la suma de las cuotas.</strong> Suele venir en el propio ticket, en el cuadro de los impuestos. Así el apunte deja de estar «sin desglosar».</p></div>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Mientras quede algún apunte sin desglosar, la cifra de IVA a liquidar está incompleta:</strong> no incluye el IVA de esos apuntes.</p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap7"><p class="cap-num">Capítulo 7</p><h2>Buscar un apunte</h2>
+<p>Todos tus apuntes están en <strong>Historial</strong>, en la barra de abajo. Para dar con uno, lo más rápido es ir acotando: primero el trimestre y luego si es un gasto o un ingreso.</p>
+<div class="fig-par"><figure class="movil"><img src="manual-movil/c7_02.webp" alt="El historial del trimestre" loading="lazy"><figcaption>El historial del trimestre</figcaption></figure><figure class="movil"><img src="manual-movil/c7_03.webp" alt="Eligiendo otro trimestre" loading="lazy"><figcaption>Eligiendo otro trimestre</figcaption></figure></div>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Todo, Gastos, Ingresos.</strong> Para verlo todo junto o solo una de las dos cosas.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>El trimestre.</strong> Púlsalo para elegir otro.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Un ingreso.</strong> Flecha verde hacia arriba e importe en verde.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Abrir el apunte.</strong> Pulsa en cualquier apunte para abrirlo, ver su foto o corregir un dato.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Un gasto.</strong> Flecha roja hacia abajo e importe en rojo.</span></p><p class="ll"><span class="n">6</span><span class="t"><strong>Historial</strong>, en la barra de abajo. Desde aquí vas también a Inicio y a Ajustes.</span></p><p class="ll"><span class="n">7</span><span class="t"><strong>La lista de trimestres.</strong> El que estás viendo sale resaltado.</span></p><p class="ll"><span class="n">8</span><span class="t"><strong>Trimestres anteriores.</strong> Puedes bajar hasta los de años pasados.</span></p></div>
+<p>Cada apunte te enseña su importe, su fecha y el concepto. La lista va ordenada por fecha, del más reciente al más antiguo.</p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap8"><p class="cap-num">Capítulo 8</p><h2>Exportar: mandárselo a tu gestor</h2>
+<p>Al final del trimestre, en Inicio pulsas <strong>Exportar este trimestre</strong> y se abre esta pantalla. <a class="ref" href="#cap6">→ capítulo 6</a></p>
+<div class="fig-lado"><figure class="movil"><img src="manual-movil/c8_09.webp" alt="Exportar" loading="lazy"><figcaption>Exportar</figcaption></figure><div class="lado-texto"><p class="ll"><span class="n">1</span><span class="t"><strong>Volver</strong>, sin exportar nada.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Elige el periodo.</strong> Comprueba que es el trimestre que quieres mandar; si no, cámbialo aquí.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>PDF — Resumen visual.</strong> Para imprimir o para mandárselo al gestor.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Compartir.</strong> Al pulsar un formato, el teléfono abre su ventana de compartir.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Excel — Libro registro.</strong> Con dos hojas: Ingresos y Gastos.</span></p><p class="ll"><span class="n">6</span><span class="t"><strong>ZIP — Todo.</strong> El PDF, el Excel y las fotos de todas las facturas, en un solo fichero.</span></p></div></div>
+<p>Pulsa el formato que quieras. El teléfono abre su propia ventana de compartir, la misma que usas para mandar una foto, y desde ahí eliges cómo mandarlo: WhatsApp, correo o lo que uses con tu gestor.</p>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Si dudas, manda el ZIP.</strong> Lleva todo junto: el PDF, el Excel y las fotos de todas las facturas. Con él, tu gestor lo tiene todo.</p></div>
+<h3>Lo que recibe tu gestor</h3>
+<p>Estos son los ficheros de verdad que genera la app, abiertos en un ordenador. Son los del ejemplo: los 11 apuntes del primer trimestre de 2026 de Candela Ruiz Montoro.</p>
+<h3>El PDF</h3>
+<figure class="ancha"><img src="manual-movil/c8_pdf.webp" alt="El PDF, abierto en el ordenador" loading="lazy"><figcaption>El PDF, abierto en el ordenador</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">7</span><span class="t"><strong>De quién y de qué.</strong> Tu nombre, tu NIF y tu número de cliente, el trimestre y el día en que se generó.</span></p><p class="ll"><span class="n">8</span><span class="t"><strong>El resumen.</strong> Ingresos, gastos, resultado, IVA repercutido y soportado, IVA a liquidar e IRPF retenido.</span></p><p class="ll"><span class="n">9</span><span class="t"><strong>La referencia de cada apunte.</strong> Fecha, tipo y número de orden, por ejemplo 2026-02-28-ingreso-01. Es la misma que lleva el nombre de su foto.</span></p><p class="ll"><span class="n">10</span><span class="t"><strong>«Varios tipos de IVA».</strong> Los apuntes sin desglosar, en su propio grupo. <a class="ref" href="#cap6">→ capítulo 6</a></span></p><p class="ll"><span class="n">11</span><span class="t"><strong>No es un documento oficial.</strong> Lo dice el pie: es un resumen para tu gestor y no tiene validez fiscal.</span></p></div>
+<p>Los apuntes van agrupados por tipo de IVA, cada grupo con su subtotal.</p>
+<h3>El Excel</h3>
+<figure class="ancha"><img src="manual-movil/c8_excel.webp" alt="El Excel, abierto en el ordenador" loading="lazy"><figcaption>El Excel, abierto en el ordenador</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">12</span><span class="t"><strong>La cabecera.</strong> Como en el PDF: nombre, NIF y número de cliente.</span></p><p class="ll"><span class="n">13</span><span class="t"><strong>Referencia.</strong> La misma del PDF y de las fotos.</span></p><p class="ll"><span class="n">14</span><span class="t"><strong>Varios tipos de IVA.</strong> El mismo grupo que en el PDF.</span></p><p class="ll"><span class="n">15</span><span class="t"><strong>Dos hojas: Ingresos y Gastos.</strong></span></p></div>
+<p>Es el libro registro del trimestre: una fila por apunte, con la fecha, el número de factura, el nombre y el NIF, la base, el IVA, la retención, el total y el concepto.</p>
+<h3>Las fotos</h3>
+<figure class="ancha"><img src="manual-movil/c8_fotos.webp" alt="La carpeta de gastos, en el explorador de archivos" loading="lazy"><figcaption>La carpeta de gastos, en el explorador de archivos</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">16</span><span class="t"><strong>Una foto por apunte</strong>, con la referencia del apunte como nombre.</span></p><p class="ll"><span class="n">17</span><span class="t"><strong>El taxi del capítulo 4</strong>, 2026-02-18-gasto-02. <a class="ref" href="#cap4">→ capítulo 4</a></span></p></div>
+<p>Dentro del ZIP, las fotos van en dos carpetas, <strong>gastos</strong> e <strong>ingresos</strong>. Como cada foto se llama igual que la referencia de su apunte, tu gestor encuentra la de cualquier línea del PDF o del Excel sin abrirlas una a una. El ZIP lleva también el PDF, el Excel y <strong>apunta.dat</strong>, un fichero cifrado para el programa de tu gestor. Dentro van tus datos (nombre, NIF y número de cliente), el trimestre y, de cada apunte, su tipo de IVA y el texto que leyó la app del papel.</p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap9"><p class="cap-num">Capítulo 9</p><h2>Tus datos y tu número de cliente</h2>
+<p>En <strong>Ajustes</strong>, arriba del todo, están los <strong>datos para el gestor</strong>: lo que viaja en cada exportación para que tu gestor sepa de quién es.</p>
+<div class="fig-lado"><figure class="movil"><img src="manual-movil/c9_10.webp" alt="Ajustes" loading="lazy"><figcaption>Ajustes</figcaption></figure><div class="lado-texto"><p class="ll"><span class="n">1</span><span class="t"><strong>Tu nombre o negocio.</strong> Como quieras que aparezca en la exportación. Púlsalo para escribirlo o cambiarlo.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Tu NIF/CIF.</strong> Además de ir en la exportación, le sirve a la app para saltarse tu NIF cuando lee una factura y quedarse con el del proveedor.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Número de cliente.</strong> Tu código de Apunta App, del tipo AP-XXXX-XXXX. No tienes que hacer nada con él: viaja en cada exportación y así tu gestor sabe de quién es, aunque tenga muchos clientes con la app.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>IVA habitual.</strong></span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Retención IRPF por defecto.</strong> Estos dos son los valores con los que parten tus apuntes nuevos. Si casi todas tus facturas llevan el mismo IVA o la misma retención, déjalos puestos aquí.</span></p></div></div>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Si tu gestor te pregunta por tu número de cliente,</strong> lo tienes aquí. Y también sale en la cabecera del PDF y del Excel. <a class="ref" href="#cap8">→ capítulo 8</a></p></div>
+<p>Estos datos, como todo lo demás, no salen de tu móvil. Solo los ve tu gestor, cuando tú le mandas una exportación.</p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap10"><p class="cap-num">Capítulo 10</p><h2>La copia de seguridad</h2>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Tus apuntes solo están en tu móvil.</strong> Es lo que los hace privados, pero también quiere decir que si pierdes el teléfono, se te rompe o desinstalas la app, se van con él. La copia de seguridad es lo único que los salva.</p></div>
+<p>La copia está en <strong>Ajustes</strong>, un poco más abajo de tus datos.</p>
+<div class="fig-lado"><figure class="movil"><img src="manual-movil/c10_11.webp" alt="Ajustes: la copia de seguridad" loading="lazy"><figcaption>Ajustes: la copia de seguridad</figcaption></figure><div class="lado-texto"><p class="ll"><span class="n">1</span><span class="t"><strong>Hacer copia de seguridad.</strong> Hace una copia de todo lo que tienes en la app, cifrada con una contraseña que eliges tú.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Última copia.</strong> El día de la última vez. Si hace mucho, haz una.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Cargar una copia de seguridad.</strong> Trae a este móvil lo que guardaste en una copia. Es lo que usas al cambiar de teléfono.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Recordar el cierre del trimestre.</strong> La app te avisa cuando se acerca el fin del trimestre: buen momento para exportar y para hacer copia.</span></p></div></div>
+<h3>Cómo se hace</h3>
+<p>Al pulsar <strong>Hacer copia de seguridad</strong>, la app te pide una contraseña de al menos 6 caracteres y cifra la copia con ella. Puede recordarla para la próxima vez. Cuando la copia está lista, tienes dos botones:</p>
+<p><strong>Compartir la copia</strong> abre la ventana de compartir del teléfono, para mandártela por correo, a tu ordenador o a donde guardes tus cosas.</p>
+<p><strong>Guardar en el móvil</strong> abre la ventana del teléfono para elegir una carpeta.</p>
+<p>El fichero se llama «Copia de seguridad ApuntaApp movil» seguido de la fecha.</p>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Apunta la contraseña en un sitio seguro.</strong> La copia va cifrada: sin la contraseña no se puede abrir, y nadie puede recuperarla por ti.</p></div>
+<h3>Cuándo hacerla</h3>
+<p>Una costumbre sencilla: cada vez que le mandes un trimestre a tu gestor, haz también una copia. Y si apuntas mucho, una vez por semana.</p>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Guarda la copia fuera del teléfono.</strong> Usa «Compartir la copia» para mandártela a tu correo o a tu ordenador. Una copia que se queda en el mismo móvil se pierde con él.</p></div>
+<h3>Al cambiar de móvil</h3>
+<p>Instala Apunta App en el móvil nuevo y, en la primera pantalla, pulsa <strong>Cargar mi copia de seguridad</strong>. <a class="ref" href="#cap2">→ capítulo 2</a></p>
+<p>Si ya habías empezado a usarla en el móvil nuevo, tienes lo mismo en Ajustes ③.</p>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Cargar una copia sustituye todo lo que haya en el móvil:</strong> facturas, fotos y ajustes. No mezcla. La app te lo pide confirmar con el botón «Sustituir». Lo único que no cambia es el número de cliente, que se queda el del móvil donde cargas la copia.</p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap11"><p class="cap-num">Capítulo 11</p><h2>Preguntas frecuentes</h2>
+<p>Al final de <strong>Ajustes</strong> tienes la ayuda, los textos legales y la versión de la app.</p>
+<div class="fig-lado"><figure class="movil"><img src="manual-movil/c11_12.webp" alt="Ajustes: ayuda, legal y versión" loading="lazy"><figcaption>Ajustes: ayuda, legal y versión</figcaption></figure><div class="lado-texto"><p class="ll"><span class="n">1</span><span class="t"><strong>Comentarios y sugerencias.</strong> Para contarnos qué te parece, una idea o algo que mejorar.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Legal.</strong> Política de privacidad, aviso legal y términos y condiciones. Se abren aparte.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Acerca de.</strong> Lo que es la app, y lo que no.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Versión.</strong> Si nos escribes por un problema, dinos qué versión tienes: la ves aquí.</span></p></div></div>
+<h3>¿Necesito internet?</h3>
+<p>No. La app lee las facturas en el propio móvil. Solo te hará falta conexión para mandarle la exportación a tu gestor por WhatsApp o por correo.</p>
+<h3>¿Alguien más ve mis facturas?</h3>
+<p>No. No hay cuenta ni nube: tus apuntes no salen del teléfono hasta que tú exportas un trimestre y se lo mandas a tu gestor.</p>
+<h3>La app ha leído mal un importe. ¿Qué hago?</h3>
+<p>Corrígelo en la revisión, antes de guardar. Casi siempre es por la foto: poca luz, movida o desenfocada. Si quieres ver qué leyó el teléfono, pulsa «Ver texto detectado por OCR» al final de la revisión. Si ya lo habías guardado, ábrelo desde el historial. La foto va siempre con el apunte, así que tu gestor puede comprobarlo. <a class="ref" href="#cap4">→ capítulo 4</a></p>
+<h3>¿Por qué me sale «Esta fecha es de otro trimestre»?</h3>
+<p>Porque la fecha del papel no es del trimestre en el que estamos. Si la fecha está bien, déjala: el apunte irá a su trimestre. <a class="ref" href="#cap4">→ capítulo 4</a></p>
+<h3>¿Por qué el IVA a liquidar sale en negativo?</h3>
+<p>Porque ese trimestre has pagado más IVA del que has cobrado. <a class="ref" href="#cap6">→ capítulo 6</a></p>
+<h3>Me ha llegado una factura en PDF por correo. ¿Puedo apuntarla?</h3>
+<p>Sí: en Inicio, con <strong>Subir foto/PDF guardado en el móvil</strong>. Si el PDF trae el texto dentro, la app lo usa directamente. <a class="ref" href="#cap3">→ capítulo 3</a></p>
+<h3>¿Por qué no rellena el nombre del proveedor?</h3>
+<p>Porque la app no lo lee: lee el NIF, pero el nombre, el concepto y el número de factura de un gasto los escribes tú. <a class="ref" href="#cap4">→ capítulo 4</a></p>
+<h3>Voy a cambiar de móvil. ¿Pierdo mis apuntes?</h3>
+<p>No, si haces antes una copia de seguridad y la cargas en el móvil nuevo. <a class="ref" href="#cap10">→ capítulo 10</a></p>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Si pierdes el móvil sin haber hecho copia, pierdes los apuntes que tenías en él.</strong> Nadie más los tiene, ni siquiera nosotros. Lo que ya le habías mandado a tu gestor lo conserva él.</p></div>
+<h3>He olvidado la contraseña de la copia de seguridad.</h3>
+<p>Sin ella, esa copia no se puede abrir. Si todavía tienes los apuntes en el móvil, haz una copia nueva con otra contraseña y apúntala bien. <a class="ref" href="#cap10">→ capítulo 10</a></p>
+<h3>¿Lo que exporto tiene validez fiscal?</h3>
+<p>No. Es un resumen ordenado para tu gestor, no un documento oficial. Guarda los originales como te diga tu gestor.</p>
+<h3>¿Hay que pagar una cuota?</h3>
+<p>No. Apunta App se paga una vez, 49,99 €, sin cuota mensual.</p>
+<h3>¿La app presenta mis impuestos?</h3>
+<p>No. No presenta modelos a Hacienda ni sustituye a tu gestor: le lleva el trabajo hecho. <a class="ref" href="#cap1">→ capítulo 1</a></p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section>
+
+<div class="cierre">
+  <p class="lema">Apunta... Y olvídate.</p>
+  <a class="boton-pdf" href="manual-movil/Manual-Apunta-App-Movil.pdf" download>⬇&nbsp; Descargar el manual en PDF</a>
+  <p class="legal">© 2026 Evolution Studios S.L. Todos los derechos reservados. Queda prohibida la reproducción, distribución o modificación, total o parcial, de este manual por cualquier medio sin la autorización previa y por escrito de Evolution Studios S.L.</p>
+</div>
+
+</main>
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <div class="contenedor">
+            <div class="pie-contenido">
+                <div class="pie-bloque">
+                    <img src="logo-apunta-blanco.png" alt="Apunta" class="pie-logo-imagen">
+                    <p class="pie-empresa">Una app de Evolution Studios S.L.</p>
+                </div>
+                <div class="pie-bloque">
+                    <p class="pie-titulo">Legal</p>
+                    <ul>
+                        <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+                        <li><a href="aviso-legal.html">Aviso legal</a></li>
+                        <li><a href="terminos-condiciones.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="pie-bloque">
+                    <p class="pie-titulo">Contacto</p>
+                    <p><a href="mailto:apunta@apuntaapp.com">apunta@apuntaapp.com</a></p>
+                    <p><a href="manual-movil.html">Manual de Apunta App Móvil</a></p>
+                </div>
+            </div>
+            <div class="pie-copyright">
+                <p>© 2026 Evolution Studios S.L. · Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

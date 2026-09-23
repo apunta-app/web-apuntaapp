@@ -281,6 +281,12 @@ p {
 }
 
 /* PASOS - CÓMO FUNCIONA */
+/* El boton que lleva al manual, debajo de las tres tarjetas */
+.debajo-de-los-pasos {
+    text-align: center;
+    margin-top: 48px;
+}
+
 .pasos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
