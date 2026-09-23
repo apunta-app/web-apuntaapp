@@ -21,7 +21,11 @@
     // 🔴 `.captura-escritorio` y no `.hero-imagen img`: esa clase es SOLO la
     // del hero de gestorias. El hero de autonomos lleva `.captura-movil`, y
     // esa pagina no se toca.
-    var capturas = document.querySelectorAll('.captura-item img, .captura-escritorio');
+    //
+    // Y las de los dos manuales (23/09/2026): `.manual figure img`. Los logos
+    // de la cabecera y del pie no van dentro de una figura, asi que no entran.
+    var capturas = document.querySelectorAll(
+        '.captura-item img, .captura-escritorio, .manual figure img');
     if (!capturas.length) return;
 
     // ---- el visor, montado una vez ----------------------------------------
@@ -61,6 +65,11 @@
         grande.src = img.currentSrc || img.src;
         grande.alt = img.alt || '';
         var suPie = img.parentNode.querySelector('.captura-pie');
+        // En los manuales el pie es el <figcaption> de su figura.
+        if (!suPie) {
+            var figura = img.closest('figure');
+            suPie = figura ? figura.querySelector('figcaption') : null;
+        }
         pie.textContent = suPie ? suPie.textContent : '';
         pie.hidden = !pie.textContent;
         queLaAbrio = img;
@@ -77,7 +86,10 @@
         grande.removeAttribute('src');
         document.body.classList.remove('con-visor');
         if (queLaAbrio) {
-            queLaAbrio.focus();
+            // Sin mover la pagina: al cerrar se vuelve EXACTAMENTE a donde se
+            // estaba. Una imagen mas alta que la ventana se desplazaba sola al
+            // recibir el foco (medido en el manual del movil, 23/09/2026).
+            queLaAbrio.focus({ preventScroll: true });
             queLaAbrio = null;
         }
     }
@@ -89,7 +101,19 @@
         img.setAttribute('aria-haspopup', 'dialog');
         if (!img.title) img.title = 'Pulsa para verla en grande';
 
-        img.addEventListener('click', function () {
+        // El manual del escritorio envuelve cada imagen en un enlace que la
+        // abre en otra pagina. Con el visor, ese enlace no se sigue ni se
+        // alcanza tabulando: la imagen ya es el boton.
+        var enlace = img.closest('a');
+        if (enlace) {
+            enlace.tabIndex = -1;
+            enlace.addEventListener('click', function (e) {
+                e.preventDefault();
+            });
+        }
+
+        img.addEventListener('click', function (e) {
+            e.preventDefault();
             abrir(img);
         });
 

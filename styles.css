@@ -757,13 +757,16 @@ p {
    `.captura-escritorio` es la grande del hero de gestorias, que desde el
    08/09/2026 tambien se amplia. Es la unica del hero que entra: la del hero
    de autonomos lleva `.captura-movil` y se queda como estaba. */
+/* Y las imagenes de los dos manuales, desde el 23/09/2026. */
 .captura-item img,
-.captura-escritorio {
+.captura-escritorio,
+.manual figure img {
     cursor: zoom-in;
 }
 
 .captura-item img:focus-visible,
-.captura-escritorio:focus-visible {
+.captura-escritorio:focus-visible,
+.manual figure img:focus-visible {
     outline: 3px solid #2d5a3d;
     outline-offset: 3px;
 }
