@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de Apunta App Escritorio</title>
+<meta name="description" content="Manual de uso de Apunta App Escritorio: cómo revisar los apuntes de tus clientes y dejarlos listos para tu programa de contabilidad.">
+<meta name="keywords" content="apunta escritorio, manual apunta escritorio, software gestoría, asesoría fiscal, OCR facturas, CONTASOL, libro registro">
+<meta name="author" content="Evolution Studios S.L.">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph para redes sociales -->
+<meta property="og:title" content="Manual de Apunta App Escritorio">
+<meta property="og:description" content="Cómo revisar los apuntes de tus clientes y dejarlos listos para tu programa de contabilidad.">
+<meta property="og:url" content="https://apuntaapp.com/manual-escritorio.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+/* Manual de Apunta App Escritorio: estilos propios, todos dentro de .manual */
+.manual {
+  --m-serif: Georgia, 'Times New Roman', serif;
+  --m-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --m-verde: #2D5A3D; --m-verde-claro: #E8F1EB; --m-verde-fondo: #F4F8F5;
+  --m-ambar: #E8A33D; --m-ambar-oscuro: #B07014;
+  --m-rojo: #B3261E; --m-rojo-claro: #FBEAE8;
+  --m-naranja: #D9730D; --m-gris: #6B6B6B; --m-texto: #222;
+  font-family: var(--m-sans); color: var(--m-texto); line-height: 1.65; font-size: 17px;
+  max-width: 900px; margin: 0 auto; padding: 0 20px 60px;
+}
+.manual * { box-sizing: border-box; }
+.manual img { max-width: 100%; height: auto; display: block; }
+.manual a { color: var(--m-verde); }
+.manual .portada { text-align: center; padding: 56px 0 36px; }
+.manual .portada .etiqueta { color: var(--m-ambar-oscuro); font-weight: 700; letter-spacing: .14em; font-size: 13px; text-transform: uppercase; margin: 0 0 10px; }
+.manual .portada h1 { font-family: var(--m-serif); color: var(--m-verde); font-size: clamp(32px, 5vw, 46px); margin: 0 0 12px; line-height: 1.15; }
+.manual .portada .sub { color: var(--m-gris); font-size: 19px; margin: 0 0 26px; }
+.manual .portada .lema { font-family: var(--m-serif); font-style: italic; color: var(--m-verde); font-size: 20px; margin: 26px 0 6px; }
+.manual .portada .version { color: var(--m-gris); font-size: 14px; margin: 0; }
+.manual .boton-pdf { display: inline-flex; align-items: center; gap: 10px; background: var(--m-verde); color: #fff; text-decoration: none;
+  font-weight: 600; padding: 13px 26px; border-radius: 999px; font-size: 16px; }
+.manual .boton-pdf:hover { filter: brightness(1.12); }
+.manual .indice { background: var(--m-verde-fondo); border-radius: 14px; padding: 26px 30px; margin: 10px 0 40px; }
+.manual .indice h2 { font-family: var(--m-serif); color: var(--m-verde); margin: 0 0 14px; font-size: 24px; border: 0; padding: 0; }
+.manual .indice ol { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 30px; }
+.manual .indice li { break-inside: avoid; margin: 0 0 10px; }
+.manual .indice a { display: flex; gap: 12px; align-items: baseline; text-decoration: none; color: var(--m-texto); }
+.manual .indice a:hover { color: var(--m-verde); text-decoration: underline; }
+.manual .indice .n { color: var(--m-ambar-oscuro); font-weight: 700; min-width: 20px; text-align: right; }
+.manual .cap { padding-top: 34px; scroll-margin-top: 90px; }
+.manual .cap-num { color: var(--m-ambar-oscuro); font-weight: 700; letter-spacing: .14em; font-size: 13px; text-transform: uppercase; margin: 0 0 4px; }
+.manual h2 { font-family: var(--m-serif); color: var(--m-verde); font-size: clamp(26px, 3.6vw, 32px); line-height: 1.2;
+  margin: 0 0 22px; padding-bottom: 12px; border-bottom: 3px solid var(--m-verde); }
+.manual h3 { font-family: var(--m-serif); color: var(--m-verde); font-size: 21px; margin: 30px 0 10px; }
+.manual p { margin: 0 0 14px; font-size: inherit; } /* la web pone 1.1rem a todo p */
+.manual .ref { color: var(--m-verde); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.manual .ref:hover { text-decoration: underline; }
+.manual .llamadas, .manual .marcas, .manual .lado-texto { margin: 0 0 16px; }
+.manual .ll, .manual .mk { display: flex; gap: 12px; align-items: flex-start; margin: 0 0 10px; font-size: 16px; }
+.manual .ll .n { flex: 0 0 28px; height: 28px; border-radius: 50%; background: var(--m-ambar); border: 2px solid var(--m-ambar-oscuro);
+  color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+.manual .mk .n { flex: 0 0 26px; height: 26px; border-radius: 50%; color: #fff; font-weight: 700; font-size: 14px;
+  display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+.manual .mk-verde .n { background: var(--m-verde); } .manual .mk-naranja .n { background: var(--m-naranja); } .manual .mk-gris .n { background: #8A8A8A; }
+.manual .caja { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 14px 20px 6px; margin: 6px 0 20px; }
+.manual .caja.consejo { background: var(--m-verde-claro); border-color: var(--m-verde); }
+.manual .caja.atencion { background: var(--m-rojo-claro); border-color: var(--m-rojo); }
+.manual .caja-tit { font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 4px; }
+.manual .consejo .caja-tit { color: var(--m-verde); } .manual .atencion .caja-tit { color: var(--m-rojo); }
+.manual figure { margin: 8px 0 22px; }
+.manual figcaption { text-align: center; font-style: italic; color: var(--m-gris); font-size: 14px; margin-top: 8px; }
+.manual figure a { display: block; cursor: zoom-in; }
+.manual figure.ancha img { margin: 0 auto; border-radius: 6px; }
+.manual .fig-par { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin: 10px 0 8px; }
+.manual .fig-par figure { margin: 0; }
+.manual figure.movil img { margin: 0 auto; max-width: 340px; width: 100%; }
+.manual .fig-lado { display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: 30px; align-items: center; margin: 10px 0 20px; }
+.manual .fig-lado figure { margin: 0; }
+.manual .tabla { overflow-x: auto; margin: 6px 0 22px; }
+.manual table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 560px; }
+.manual th { background: var(--m-verde); color: #fff; text-align: left; padding: 10px 12px; font-weight: 600; }
+.manual td { padding: 10px 12px; border-bottom: 1px solid #D5DDD8; vertical-align: top; }
+.manual tbody tr:nth-child(even) td { background: var(--m-verde-fondo); }
+.manual .volver { text-align: right; font-size: 14px; margin-top: 10px; }
+.manual .volver a { color: var(--m-gris); text-decoration: none; }
+.manual .volver a:hover { color: var(--m-verde); }
+.manual .cierre { text-align: center; margin-top: 50px; padding-top: 26px; border-top: 1px solid #D5DDD8; }
+.manual .cierre .lema { font-family: var(--m-serif); font-style: italic; color: var(--m-verde); font-size: 20px; margin-bottom: 18px; }
+.manual .legal { color: #8A8A8A; font-size: 12.5px; max-width: 680px; margin: 18px auto 0; }
+@media (max-width: 720px) {
+  .manual { font-size: 16px; }
+  .manual .indice ol { columns: 1; }
+  .manual .fig-par { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .manual .fig-lado { grid-template-columns: 1fr; gap: 14px; }
+  .manual figure.movil img { max-width: 300px; }
+}
+</style>
+</head>
+<body>
+    <!-- CABECERA -->
+    <header class="header">
+        <div class="contenedor">
+            <a href="index.html" class="logo">
+                <img src="logo-apunta.png" alt="Apunta" class="logo-imagen">
+            </a>
+            <nav class="navegacion">
+                <ul>
+                    <li><a href="gestorias.html#inicio">Inicio</a></li>
+                    <li><a href="gestorias.html#como-llegan">Cómo funciona</a></li>
+                    <li><a href="gestorias.html#precio">Precio</a></li>
+                    <li><a href="gestorias.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<main class="manual">
+
+<header class="portada">
+  <p class="etiqueta">Manual de uso</p>
+  <h1>Apunta App Escritorio</h1>
+  <p class="sub">Para gestorías y asesorías: revisa los apuntes de tus clientes y déjalos listos para tu programa de contabilidad.</p>
+  <a class="boton-pdf" href="manual-escritorio/Manual-Apunta-App-Escritorio.pdf" download>⬇&nbsp; Descargar el manual en PDF</a>
+  <p class="lema">Apunta... Y olvídate.</p>
+  <p class="version">Versión 1.2.5 · Septiembre de 2026</p>
+</header>
+
+<nav class="indice" id="indice" aria-label="Índice del manual">
+  <h2>Índice</h2>
+  <ol>
+<li><a href="#cap1"><span class="n">1</span>Qué es Apunta App Escritorio</a></li>
+<li><a href="#cap2"><span class="n">2</span>La primera vez que la abres</a></li>
+<li><a href="#cap3"><span class="n">3</span>El tablero de trabajo</a></li>
+<li><a href="#cap4"><span class="n">4</span>Tus clientes</a></li>
+<li><a href="#cap5"><span class="n">5</span>Cómo entran las facturas</a></li>
+<li><a href="#cap6"><span class="n">6</span>El cuaderno: donde la app aprende</a></li>
+<li><a href="#cap7"><span class="n">7</span>El semáforo: verde, ámbar y rojo</a></li>
+<li><a href="#cap8"><span class="n">8</span>La ventana de revisión</a></li>
+<li><a href="#cap9"><span class="n">9</span>Revisar el trimestre entero</a></li>
+<li><a href="#cap10"><span class="n">10</span>Exportar para tu programa de contabilidad</a></li>
+<li><a href="#cap11"><span class="n">11</span>Ajustes y ayuda</a></li>
+<li><a href="#cap12"><span class="n">12</span>Copia de seguridad, y por qué importa</a></li>
+<li><a href="#cap13"><span class="n">13</span>Preguntas frecuentes</a></li>
+  </ol>
+</nav>
+
+<section class="cap" id="cap1"><p class="cap-num">Capítulo 1</p><h2>Qué es Apunta App Escritorio</h2>
+<p>Tus clientes autónomos fotografían sus facturas y sus tickets con <strong>Apunta App en el móvil</strong>, y al terminar el trimestre te mandan un fichero. Tú lo sueltas aquí, y <strong>la app lo lee, lo ordena y te lo deja listo para importar en tu programa de contabilidad</strong>. <strong>Tú revisas y validas; del resto se ocupa la app.</strong></p>
+<p>También puedes usarla con clientes que prefieren no tocar nada: ellos te hacen llegar sus papeles y <strong>escaneas tú el taco entero</strong> en la fotocopiadora de la oficina.</p>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Lo que Apunta App Escritorio no hace.</strong> No es un programa de contabilidad ni una gestoría: no liquida impuestos, no presenta modelos y no tiene validez fiscal. <strong>Prepara el trabajo, no lo firma.</strong> Es el puente entre tu cliente autónomo y tu programa de contabilidad.</p></div>
+<h3>Todo se queda en tu ordenador</h3>
+<p>La app no envía nada a ningún servidor: <strong>ni las facturas, ni las fotos, ni los datos de tus clientes</strong>. Todo vive en el equipo donde la instalas. Eso tiene una consecuencia importante que conviene tener clara desde el principio, y por eso hay un capítulo entero sobre ella: <strong>la copia de seguridad la haces tú</strong>. <a class="ref" href="#cap12">→ capítulo 12</a></p>
+<h3>Cómo está pensado el trabajo</h3>
+<p>La app no intenta acertarlo todo sola. Intenta <strong>no equivocarse en silencio</strong>: cuando ha leído un dato con seguridad lo pone en verde, y cuando no, lo deja marcado para que lo mires. Cada cosa que tú corriges, además, <strong>se la queda para la próxima vez</strong>.</p>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>El verde ayuda, pero el visto bueno lo das tú.</strong> Que un apunte salga en verde significa que las cuentas cuadran y que los datos se leyeron con seguridad, no que nadie tenga que mirarlo. <strong>Repásalos igual</strong>: siempre puede colarse algo, y quien responde del libro registro eres tú.</p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap2"><p class="cap-num">Capítulo 2</p><h2>La primera vez que la abres</h2>
+<p>La primera vez que abres Apunta App Escritorio, la app te lleva por cuatro pasos. Solo salen una vez.</p>
+<h3>1 · Contratar</h3>
+<p>Lo primero es la suscripción. Se contrata y se renueva desde la Microsoft Store, y el primer mes es de prueba.</p>
+<figure class="ancha"><a href="manual-escritorio/30-primer-arranque-contratar.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/30-primer-arranque-contratar.webp" alt="La ventana de Contratar." loading="lazy"></a><figcaption>La ventana de Contratar.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>El precio y el mes de prueba.</strong> Si cancelas antes de que termine el primer mes, no se te cobra nada.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>La casilla de los textos legales.</strong> Los términos, la privacidad y el aviso legal: puedes leerlos desde sus enlaces. Marcar la casilla es aceptarlos. Si algún día cambian, la app te pedirá que los aceptes de nuevo.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Contratar.</strong> Se enciende al marcar la casilla y abre la compra de la Microsoft Store.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Salir de Apunta.</strong> Cierra la app. Al volver a abrirla, sale otra vez esta ventana.</span></p></div>
+<h3>2 · La bienvenida</h3>
+<figure class="ancha"><a href="manual-escritorio/31-primer-arranque-bienvenida.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/31-primer-arranque-bienvenida.webp" alt="La bienvenida." loading="lazy"></a><figcaption>La bienvenida.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Añadir un acceso directo en el escritorio.</strong> Viene marcado: deja el icono de la app en tu escritorio para abrirla con un doble clic.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Empezar.</strong></span></p></div>
+<h3>3 · El tutorial</h3>
+<p>Un recorrido de tres pasos por la pantalla: la barra de herramientas, tus clientes y el trabajo por trimestres. Te lo puedes saltar, y volver a verlo cuando quieras desde Ayuda. <a class="ref" href="#cap11">→ capítulo 11</a></p>
+<h3>4 · Tu primer cliente</h3>
+<p>Para empezar, la app te pide el nombre y el NIF de <strong>un cliente tuyo</strong>. Con ellos crea una <strong>ficha de prueba</strong>, para que puedas trabajar desde el primer día escaneándole papeles.</p>
+<figure class="ancha"><a href="manual-escritorio/32-primer-arranque-ficha-de-prueba.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/32-primer-arranque-ficha-de-prueba.webp" alt="Empieza con un cliente tuyo." loading="lazy"></a><figcaption>Empieza con un cliente tuyo.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Nombre del cliente.</strong></span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Su NIF, CIF o NIE.</strong></span></p><p class="ll"><span class="n">3</span><span class="t"><strong>La ficha se queda fija con este cliente:</strong> el nombre y el NIF no se vuelven a preguntar, así que escríbelos bien.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Empezar.</strong> Se enciende cuando el nombre y el NIF son correctos.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Salir de Apunta.</strong> Este paso no se puede saltar: si sales, te lo vuelve a pedir la próxima vez.</span></p></div>
+<p><strong>El día que ese cliente tenga Apunta App en el móvil</strong> y te mande su fichero, tendrás su ficha de verdad. Entonces puedes borrar la de prueba. <a class="ref" href="#cap4">→ capítulo 4</a></p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap3"><p class="cap-num">Capítulo 3</p><h2>El tablero de trabajo</h2>
+<p>Es <strong>la pantalla principal, donde vas a estar trabajando todo el rato</strong>, y se divide en tres partes: <strong>arriba, las herramientas</strong> (importar el fichero que te manda tu cliente y el cuaderno, que es donde la app aprende); <strong>a la izquierda, tus clientes</strong>; y <strong>a la derecha, los apuntes</strong> del cliente y del trimestre que tengas abiertos.</p>
+<p>Este capítulo es el mapa de la aplicación: cada botón, en una línea, con el capítulo donde se explica a fondo.</p>
+<figure class="ancha"><a href="manual-escritorio/01-tablero-con-un-cliente-abierto.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/01-tablero-con-un-cliente-abierto.webp" alt="El tablero, con un cliente abierto en el primer trimestre de 2026. Todos los datos de este manual son inventados." loading="lazy"></a><figcaption>El tablero, con un cliente abierto en el primer trimestre de 2026. Todos los datos de este manual son inventados.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Importar ZIP.</strong> Trae a la ficha el fichero ZIP exportado desde la app del móvil de tu cliente. No hace falta pulsarlo: <strong>puedes arrastrar uno o varios ficheros sobre cualquier parte de la ventana</strong>, y es más rápido. <a class="ref" href="#cap5">→ capítulo 5</a></span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Cuaderno.</strong> Es <strong>el sistema de aprendizaje de la app</strong>: mejora con cada uso. Guarda los nombres de proveedores por NIF y las cuentas contables que vas validando. <a class="ref" href="#cap6">→ capítulo 6</a></span></p><p class="ll"><span class="n">3</span><span class="t"><strong>La lista de clientes.</strong> Cada uno con su NIF y su número de cliente. La estrella sube arriba a los clientes <strong>con los que estás trabajando</strong>, y al importar el fichero de alguien <strong>se le marca sola</strong>. <a class="ref" href="#cap4">→ capítulo 4</a></span></p><p class="ll"><span class="n">4</span><span class="t"><strong>El trimestre.</strong> Cambias de periodo sin salir de la ficha. Al lado te dice <strong>cuántos apuntes nuevos</strong> han entrado del escaneo o de la importación y siguen sin revisar. <a class="ref" href="#cap4">→ capítulo 4</a></span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Escanear lote, Exportar y Revisar este trimestre.</strong> Las tres acciones del día a día, siempre a mano. <a class="ref" href="#cap9">→ capítulo 9</a> <a class="ref" href="#cap10">→ capítulo 10</a></span></p><p class="ll"><span class="n">6</span><span class="t"><strong>El semáforo y el sentido.</strong> El círculo dice si el apunte está comprobado; la flecha, si es un gasto (roja, hacia abajo) o un ingreso (verde, hacia arriba). <a class="ref" href="#cap7">→ capítulo 7</a></span></p><p class="ll"><span class="n">7</span><span class="t"><strong>El resultado del trimestre.</strong> Ingresos menos gastos, calculado sobre lo que hay en pantalla.</span></p><p class="ll"><span class="n">8</span><span class="t"><strong>Ayuda y ajustes.</strong> En <strong>Ayuda</strong> tienes el tutorial, los textos legales, el contacto y la versión instalada. La <strong>rueda dentada de Ajustes</strong>, arriba a la derecha, abre los ajustes; si lleva un punto rojo, es que te toca hacer una copia de seguridad. <a class="ref" href="#cap11">→ capítulo 11</a></span></p></div>
+<h3>Ordenar la tabla</h3>
+<p>Pulsa el rótulo de cualquier columna (fecha, proveedor, total…) para ordenar por ella; otra vez, y el orden se invierte. Los tres iconos pequeños de la izquierda ordenan también: <strong>como entraron</strong>, en el orden del montón de papel; <strong>por semáforo</strong>, primero lo rojo y lo ámbar; y <strong>por tipo</strong>, ingresos y gastos.</p>
+<p>Las filas llevan marcas de color: <strong>azul</strong>, un apunte nuevo que todavía no has abierto; <strong>gris</strong>, uno que la app tiene entre manos mientras revisa el trimestre y que aún no se puede abrir. Si pasas el ratón por encima de una celda cortada, ves el texto entero.</p>
+<h3>Cuando quieres ver más columnas</h3>
+<p>La tabla enseña <strong>las columnas que caben</strong>. Si necesitas verlas todas, tienes tres formas, y se pueden combinar. <strong>La primera: plegar la lista de clientes.</strong></p>
+<figure class="ancha"><a href="manual-escritorio/02-tablero-con-el-panel-plegado.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/02-tablero-con-el-panel-plegado.webp" alt="Con el panel plegado caben la referencia, el tipo de IVA y la retención." loading="lazy"></a><figcaption>Con el panel plegado caben la referencia, el tipo de IVA y la retención.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Plegar la lista de clientes.</strong> Con la doble flecha, el panel se recoge a un lado y la tabla se ensancha. Los clientes siguen ahí, con sus iniciales; la misma flecha lo devuelve.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>IVA.</strong> El tipo de cada apunte. Cuando una factura trae varios tipos, pone <strong>Varios</strong>; si no lleva IVA, <strong>Exento</strong>.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Retención.</strong> Los euros de IRPF, cuando la factura los lleva.</span></p></div>
+<p><strong>La segunda: arrastrar la barra</strong> que separa la lista de clientes de la tabla. Déjala al ancho que te venga bien según tu pantalla o tu forma de trabajar.</p>
+<p><strong>Y la tercera: elegir tú qué columnas se ven</strong>, en la <strong>rueda dentada de Ajustes</strong>, arriba a la derecha, dentro de <strong>Configuración de la tabla</strong>. Es tu forma de trabajar, así que vale para todos tus clientes.</p>
+<figure class="ancha"><a href="manual-escritorio/13a-ajustes-configuracion-de-la-tabla.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/13a-ajustes-configuracion-de-la-tabla.webp" alt="Configuración de la tabla: las columnas que quieres ver." loading="lazy"></a><figcaption>Configuración de la tabla: las columnas que quieres ver.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Las columnas opcionales</strong>, cada una con lo que significa.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>No cabe en esta ventana.</strong> Si la pantalla se queda corta, la app te lo dice en vez de amontonarlo todo; al ensanchar la ventana o plegar la lista, vuelven solas.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Las que están siempre:</strong> semáforo, tipo, fecha, proveedor, base y total no se quitan nunca.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Restaurar la vista.</strong> Devuelve la tabla a como venía de fábrica.</span></p></div>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Nada de esto borra datos.</strong> Que una columna no se vea no significa que el dato no esté: sigue en el apunte, en el Excel y en lo que exportas. Solo deja de verse en esta tabla.</p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap4"><p class="cap-num">Capítulo 4</p><h2>Tus clientes</h2>
+<p><strong>Salvo la ficha de prueba del primer día, las fichas de cliente se crean de una sola manera: importando el fichero ZIP exportado desde Apunta App en el móvil.</strong> No se crean a mano, y tampoco se crean escaneando papeles. <a class="ref" href="#cap2">→ capítulo 2</a></p>
+<p>Eso significa que <strong>cada cliente tuyo tiene que tener Apunta App en su móvil</strong>. Es el canal por el que te hace llegar su trimestre: él fotografía y revisa, exporta, y tú recibes.</p>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>¿Y el cliente que no quiere tocar nada y te trae el sobre de papeles?</strong> También vale, pero necesitas su ficha. Pídele que <strong>se instale la app y te mande una exportación una sola vez</strong>, aunque vaya casi vacía: con ese fichero se crea su ficha, y a partir de ahí <strong>ya puedes escanearle tú todos los papeles</strong> que quieras.</p></div>
+<p>Al importar, la app crea la ficha con <strong>el nombre, el NIF y el número de cliente</strong> que vienen dentro del fichero, y la marca como prioridad para tenerla arriba mientras trabajas.</p>
+<figure class="ancha"><a href="manual-escritorio/03-panel-de-clientes-estrella-realce-y-menu.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/03-panel-de-clientes-estrella-realce-y-menu.webp" alt="El panel de clientes, con la estrella de prioridad y el menú de cada ficha." loading="lazy"></a><figcaption>El panel de clientes, con la estrella de prioridad y el menú de cada ficha.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>La estrella.</strong> Tiene a mano al cliente mientras trabajas su trimestre: lo sube arriba del todo. Al quitarla, vuelve a su sitio en la lista.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>El realce azul.</strong> Señala las fichas que han recibido apuntes nuevos y todavía no has mirado. Desaparece cuando la abres.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>El menú de la ficha.</strong> Los tres puntos abren las opciones de ese cliente.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Borrar la ficha de este cliente.</strong> Se lleva por delante sus apuntes y sus fotos. No hay vuelta atrás salvo por una copia de seguridad. <a class="ref" href="#cap12">→ capítulo 12</a></span></p></div>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Borrar una ficha es definitivo:</strong> no pasa por la papelera. Antes de borrar, la app te dice cuántos apuntes, fotos y trimestres se pierden, te pide marcar una casilla y te ofrece exportarlo todo primero.</p></div>
+<h3>La actividad del cliente</h3>
+<p>Al pulsar un cliente se despliega su ficha, con la <strong>Actividad</strong>. Es un código opcional, de hasta cinco cifras: el que uses para ese cliente en tu programa de contabilidad. Con el lápiz lo escribes o lo cambias.</p>
+<figure class="ancha"><a href="manual-escritorio/18-actividad-del-cliente-en-edicion.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/18-actividad-del-cliente-en-edicion.webp" alt="La actividad del cliente, mientras se escribe." loading="lazy"></a><figcaption>La actividad del cliente, mientras se escribe.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>La caja de la actividad.</strong> Hasta cinco cifras.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Guardar.</strong> O Cancelar, para dejarla como estaba.</span></p></div>
+<p>De momento es un dato para ti: no sale en lo que exportas.</p>
+<h3>El trimestre</h3>
+<p>Cada ficha guarda <strong>todos los trimestres</strong> de ese cliente. El selector te lleva de uno a otro, y el número en azul te dice <strong>cuántos apuntes nuevos</strong> quedan por revisar en cada uno.</p>
+<figure class="ancha"><a href="manual-escritorio/04-selector-de-trimestre-desplegado.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/04-selector-de-trimestre-desplegado.webp" alt="El selector abierto, con los trimestres que ya tienen apuntes." loading="lazy"></a><figcaption>El selector abierto, con los trimestres que ya tienen apuntes.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>El trimestre abierto</strong>, con sus apuntes nuevos.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Los demás trimestres que ya tienen algo.</strong> La app solo te enseña los que existen.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Otro trimestre.</strong> Para ir a uno que todavía está vacío, por ejemplo si vas a escanear facturas de un periodo antiguo.</span></p></div>
+<p>Las <strong>flechas pequeñas</strong> que hay al lado del selector te llevan al trimestre anterior o al siguiente sin abrir la lista.</p>
+<h3>Ir a un trimestre vacío</h3>
+<p>Con <strong>Otro trimestre…</strong> eliges el año y el trimestre, aunque todavía no tenga apuntes. Sirve para escanear ahí un lote de facturas antiguas.</p>
+<figure class="ancha"><a href="manual-escritorio/19-otro-trimestre.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/19-otro-trimestre.webp" alt="Ir a otro trimestre." loading="lazy"></a><figcaption>Ir a otro trimestre.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>El año.</strong> Desde cinco años atrás hasta el siguiente.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>El trimestre.</strong> Cada botón te dice qué meses son.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Ir.</strong> Abre ese trimestre. No se crea nada hasta que entren apuntes.</span></p></div>
+<h3>Quitar todos los apuntes de un trimestre</h3>
+<p>Los tres puntos que hay junto a «Resultado» tienen una sola opción: quitar de golpe todos los apuntes del trimestre abierto.</p>
+<figure class="ancha"><a href="manual-escritorio/20-menu-de-este-trimestre.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/20-menu-de-este-trimestre.webp" alt="El menú del trimestre." loading="lazy"></a><figcaption>El menú del trimestre.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Los tres puntos</strong>, junto a «Resultado».</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Quitar los apuntes de este trimestre.</strong></span></p></div>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Esto borra de verdad:</strong> los apuntes no van a la papelera y no se pueden recuperar, salvo con una copia de seguridad. La app te pide marcar una casilla antes. Úsalo solo si estás seguro, por ejemplo para empezar un trimestre de cero. <a class="ref" href="#cap12">→ capítulo 12</a></p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap5"><p class="cap-num">Capítulo 5</p><h2>Cómo entran las facturas</h2>
+<p>Hay dos caminos, y puedes mezclarlos en el mismo trimestre.</p>
+<h3>1 · El fichero ZIP exportado desde la app del móvil</h3>
+<p>Es el camino cómodo: tu cliente exporta su trimestre desde Apunta App en el móvil y te lo manda por correo o por WhatsApp. Ese fichero <strong>trae ya los datos revisados por él y las fotos</strong>.</p>
+<p><strong>Arrastra el fichero sobre cualquier parte de la ventana</strong>, o pulsa Importar ZIP. Puedes soltar <strong>varios a la vez</strong>, de clientes distintos: cada apunte va a la ficha y al trimestre que le corresponde.</p>
+<figure class="ancha"><a href="manual-escritorio/05-importar-zip-resumen.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/05-importar-zip-resumen.webp" alt="El resumen que sale al terminar de importar." loading="lazy"></a><figcaption>El resumen que sale al terminar de importar.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Cuántos apuntes nuevos</strong> han entrado en total.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>A quién han ido.</strong> Un renglón por cliente y trimestre. Al cerrar el resumen, la app te deja directamente en la ficha del primero.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Cómo han entrado.</strong> Cuántos vienen en verde, cuántos hay que revisar y cuántos han llegado sin algún dato obligatorio. <a class="ref" href="#cap7">→ capítulo 7</a></span></p></div>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Volver a importar el mismo trimestre no borra tu trabajo.</strong> Si tu cliente te manda una segunda versión, la app respeta lo que tú ya habías corregido: un hueco en el fichero nuevo no vacía un dato que ya estaba puesto.</p></div>
+<h3>2 · Escanear un taco de facturas</h3>
+<p>Para el sobre de papeles que siempre aparece. Recuerda que <strong>la ficha del cliente tiene que existir ya</strong>, y esa se crea con una exportación del móvil. Antes de leer nada, la app te hace <strong>la única pregunta que no puede adivinar</strong>.</p>
+<figure class="ancha"><a href="manual-escritorio/07a-escanear-lote-gastos-o-ingresos.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/07a-escanear-lote-gastos-o-ingresos.webp" alt="Gastos o ingresos: lo decide quién emite la factura, no lo que pone el papel." loading="lazy"></a><figcaption>Gastos o ingresos: lo decide quién emite la factura, no lo que pone el papel.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Ingresos:</strong> las facturas que emite tu cliente.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Gastos:</strong> las que recibe. Si en el taco hay de los dos tipos, escanéalos en dos veces.</span></p></div>
+<p>Después eliges de qué forma le das los papeles.</p>
+<figure class="ancha"><a href="manual-escritorio/07b-escanear-lote-ficheros-o-carpeta.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/07b-escanear-lote-ficheros-o-carpeta.webp" alt="Un PDF del escáner o una carpeta con las facturas sueltas." loading="lazy"></a><figcaption>Un PDF del escáner o una carpeta con las facturas sueltas.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Un PDF con una factura por hoja.</strong> Lo que sale de la fotocopiadora de la oficina: un solo documento con todo el taco.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Una carpeta.</strong> Una factura por fichero, como estén: fotos, escaneos o PDF. Si un PDF trae varias hojas, se parte hoja a hoja.</span></p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap6"><p class="cap-num">Capítulo 6</p><h2>El cuaderno: donde la app aprende</h2>
+<p>El cuaderno es <strong>el sistema de aprendizaje de la aplicación</strong>, y es lo que hace que cada vez vaya más rápida. Funciona así: los papeles traen siempre el NIF, pero el nombre aparece escrito de mil maneras. Cuando tú validas por primera vez el nombre de un proveedor, <strong>la app lo guarda junto a su NIF</strong>, y a partir de ahí lo rellena sola, con tus palabras, en todos tus clientes.</p>
+<p>Por eso <strong>el primer trimestre es el que más trabajo da</strong>, y a partir del segundo la cosa cambia: los proveedores de siempre (la eléctrica, el seguro, el alquiler, la gasolinera) entran ya con su nombre puesto.</p>
+<figure class="ancha"><a href="manual-escritorio/06-cuaderno-proveedores-por-nif.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/06-cuaderno-proveedores-por-nif.webp" alt="El cuaderno, con los proveedores que la app ya conoce." loading="lazy"></a><figcaption>El cuaderno, con los proveedores que la app ya conoce.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Proveedores y Cuentas.</strong> Los nombres por NIF, y las cuentas contables que uses al exportar.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>El buscador.</strong> Por nombre o por NIF.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Exportar cuaderno.</strong> Te llevas todo lo aprendido a un fichero, protegido con una contraseña. No lleva clientes, ni facturas, ni imágenes.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Importar cuaderno.</strong> Para montar un equipo nuevo con el conocimiento que ya tenías, o para compartirlo con un compañero del despacho. Antes te enseña qué cambia; lo que tú has validado a mano se respeta. No se puede deshacer, así que conviene hacer antes una copia de seguridad.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Añadir proveedor.</strong> Por si quieres adelantarte y meter tú uno a mano.</span></p><p class="ll"><span class="n">6</span><span class="t"><strong>Los iconos de cada línea.</strong> Ver dónde mira la app en las facturas de ese proveedor, su <strong>código de actividad</strong> (el «123», que sale en la columna de actividad de los libros de CONTASOL), cambiarle el nombre o quitarlo del cuaderno.</span></p></div>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>El cuaderno es global, no de cada cliente.</strong> Corriges un nombre una vez y queda corregido para todos los clientes que tengan facturas de ese NIF. Es justo lo que quieres en una gestoría: la eléctrica se llama igual para todo el mundo.</p></div>
+<p>Al cambiar el nombre de un proveedor, la app te pregunta si es un cambio <strong>a partir de ahora</strong> (la empresa ha cambiado de nombre) o si estaba mal escrito y quieres <strong>corregirlo en todo</strong>. Cualquiera de los dos se puede deshacer después, desde el registro de cambios. <a class="ref" href="#cap11">→ capítulo 11</a></p>
+<h3>Dónde mira la app en las facturas de cada proveedor</h3>
+<p>El primer icono de cada proveedor abre su <strong>estructura</strong>: dónde busca la app cada dato en las facturas de ese proveedor. La app lo va aprendiendo sola cuando validas, pero aquí puedes verlo y enseñárselo tú.</p>
+<figure class="ancha"><a href="manual-escritorio/29-estructura-de-un-proveedor.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/29-estructura-de-un-proveedor.webp" alt="La estructura de las facturas de una asesoría." loading="lazy"></a><figcaption>La estructura de las facturas de una asesoría.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Añadir otro tipo de factura</strong>, si ese proveedor tiene varios modelos distintos.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>La leyenda:</strong> lo que la app ya sabe leer, lo que puede aprender y lo que no aprende.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Importes con tres cifras.</strong> Para proveedores que escriben los importes con tres cifras después del punto o de la coma.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Un dato que ya sabe leer:</strong> la palabra que va delante (el ancla) y lo que lee ahí.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Datos que no aprende</strong> de esta forma, porque se leen de otra manera.</span></p><p class="ll"><span class="n">6</span><span class="t"><strong>Un dato que puede aprender y todavía no sabe.</strong> Con el <strong>+</strong> le enseñas dónde está.</span></p><p class="ll"><span class="n">7</span><span class="t"><strong>Buscar en el texto</strong> que leyó la app de esta factura.</span></p></div>
+<p>Para enseñarle un dato, pulsa su <strong>+</strong>, selecciona con el ratón en el texto de abajo la palabra que va delante del dato y luego el dato, y pulsa <strong>Apuntar</strong>. Desde entonces, en las facturas de ese proveedor mirará ahí.</p>
+<h3>Las cuentas contables</h3>
+<p>La pestaña <strong>Cuentas</strong> tiene dos partes: el <strong>plan de cuentas</strong>, con las cuentas que trae la app y las subcuentas que crees tú, y los <strong>sinónimos</strong>, que dicen qué cuenta le toca a cada concepto.</p>
+<figure class="ancha"><a href="manual-escritorio/21-cuaderno-cuentas.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/21-cuaderno-cuentas.webp" alt="La pestaña Cuentas del cuaderno." loading="lazy"></a><figcaption>La pestaña Cuentas del cuaderno.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Plan de cuentas y Sinónimos.</strong></span></p><p class="ll"><span class="n">2</span><span class="t"><strong>El buscador.</strong> Por nombre o por código: G, G1, G17, I01…</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Nueva subcuenta.</strong> Por ejemplo, G15.001 para un tipo de gasto que quieras separar.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Cada cuenta</strong>, con su código y su nombre. El número de la derecha es cuántos apuntes la usan.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Crear una subcuenta, cambiar el nombre o quitarla.</strong> Las dos últimas, solo en las cuentas que has creado tú: las que trae la app no se cambian.</span></p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap7"><p class="cap-num">Capítulo 7</p><h2>El semáforo: verde, ámbar y rojo</h2>
+<p>Cada apunte lleva un color, y el color no es decorativo: te dice <strong>cuánto puedes fiarte de esa línea</strong> y, sobre todo, <strong>dónde tienes que mirar</strong>.</p>
+<p><strong>Verde: todo cuadra.</strong> La app ha leído los datos del papel y las cuentas salen. Aun así, <strong>dale un repaso antes de exportar</strong>.</p>
+<p><strong>Ámbar: revísalo.</strong> Hay algo que no ha podido confirmar, o un dato que cuadra por poco. No está mal necesariamente, pero quiere que lo mires.</p>
+<p><strong>Rojo: falta un dato obligatorio.</strong> Sin eso el apunte no se puede dar por bueno.</p>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>La app no se inventa nada.</strong> Si un dato no lo ha leído con seguridad, no lo pone en verde: prefiere dejarlo en ámbar y que decidas tú. Un número inventado en un libro registro es mucho peor que un hueco.</p></div>
+<p>El objetivo del trimestre es sencillo: <strong>dejar la lista en verde</strong>, y <strong>repasar también los verdes antes de exportar</strong>. Hay dos formas de trabajar, la manual y la automática, que son los dos capítulos siguientes. <a class="ref" href="#cap8">→ capítulo 8</a> <a class="ref" href="#cap9">→ capítulo 9</a></p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap8"><p class="cap-num">Capítulo 8</p><h2>La ventana de revisión</h2>
+<p>Pulsa sobre cualquier apunte y se abre la ventana donde <strong>ves el papel y los datos a la vez</strong>. Es la pantalla donde se hace el trabajo de verdad.</p>
+<figure class="ancha"><a href="manual-escritorio/08-ventana-de-revision.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/08-ventana-de-revision.webp" alt="Un apunte en verde: la factura a la izquierda, los datos a la derecha." loading="lazy"></a><figcaption>Un apunte en verde: la factura a la izquierda, los datos a la derecha.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>El estado del apunte.</strong> Aquí pone «Todo cuadra» porque las cuentas salen y no falta nada.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>La factura.</strong> Con la rueda del ratón acercas y alejas; arrastrando, la mueves. Siempre tienes el papel delante para comprobar.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Pasarlo a ingreso.</strong> Por si un gasto se coló en el lado equivocado. Se aplica al guardar, y la referencia se renumera.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Unir a otra factura.</strong> Para cuando llegan dos papeles del mismo hecho, por ejemplo la factura y su justificante de pago.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Los datos del documento.</strong> Número, fecha, proveedor, NIF, concepto y cuenta contable. Todos se pueden escribir a mano. Al escribir el proveedor o el NIF, la app te propone los que ya conoce del cuaderno.</span></p><p class="ll"><span class="n">6</span><span class="t"><strong>Los importes.</strong> Base, cuota de IVA, retención y total. Al cambiar uno, la app recalcula lo que depende de él.</span></p><p class="ll"><span class="n">7</span><span class="t"><strong>Deducible, No deducible o Prorrata.</strong> Lo decides tú: el papel no lo dice.</span></p><p class="ll"><span class="n">8</span><span class="t"><strong>Guardar / Verificado.</strong> Con esto el apunte pasa a verde y queda validado por ti.</span></p></div>
+<h3>El IVA y la retención</h3>
+<p>Pulsa el <strong>IVA %</strong> y eliges entre 21 %, 10 %, 4 %, <strong>Exento</strong> y <strong>Varios</strong>. Con Varios aparece un cuadro, <strong>el IVA tipo a tipo</strong>, con una fila por cada tipo del papel.</p>
+<figure class="ancha"><a href="manual-escritorio/26-revision-con-el-iva-en-varios.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/26-revision-con-el-iva-en-varios.webp" alt="Un ticket de gasolinera con tres tipos de IVA." loading="lazy"></a><figcaption>Un ticket de gasolinera con tres tipos de IVA.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>IVA %: Varios.</strong></span></p><p class="ll"><span class="n">2</span><span class="t"><strong>El IVA, tipo a tipo.</strong> Con <strong>+</strong> añades una fila y con <strong>−</strong> quitas la última; nunca quedan menos de dos.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Una fila por tipo:</strong> la base, el porcentaje y la cuota.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>En el papel</strong>, las bases de cada tipo: 21 %, 10 % y 4 %.</span></p></div>
+<p>El <strong>IRPF %</strong> ofrece sin retención, 19, 15, 7, 2 y 1 %, y <strong>Otros…</strong> para escribir cualquier otro. Al cambiar un porcentaje, la app recalcula la cuota y el total.</p>
+<h3>Recargo de equivalencia y suplidos</h3>
+<p>A la derecha del título <strong>Importes</strong> hay dos letras: <strong>R</strong> añade el <strong>recargo de equivalencia</strong> y <strong>S</strong> añade un <strong>suplido</strong>. Solo aparecen sus casillas cuando las pides, para no llenar la ventana de ceros.</p>
+<figure class="ancha"><a href="manual-escritorio/16-revision-con-recargo-de-equivalencia.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/16-revision-con-recargo-de-equivalencia.webp" alt="Un ticket de ferretería con recargo de equivalencia." loading="lazy"></a><figcaption>Un ticket de ferretería con recargo de equivalencia.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>R.</strong> Abre la casilla del recargo.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>S.</strong> Abre la del suplido.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Recargo de equivalencia y Recargo %.</strong> Escribes el importe y la app calcula el porcentaje. Con la X de la casilla lo quitas.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>El recargo, en el papel.</strong> Aquí, «Rec. equiv. 5,20 %: 2,75».</span></p></div>
+<p>Si el papel trae recargo, pulsa <strong>R</strong> y escribe el importe: la app no abre la casilla sola. Al escribirlo, el total se recalcula.</p>
+<p>El <strong>suplido</strong> es lo que el proveedor pagó en nombre de tu cliente y le cobra aparte, sin IVA: una tasa, un registro, un certificado.</p>
+<figure class="ancha"><a href="manual-escritorio/17-revision-con-suplido.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/17-revision-con-suplido.webp" alt="Una factura de asesoría con un suplido." loading="lazy"></a><figcaption>Una factura de asesoría con un suplido.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>S.</strong></span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Suplido.</strong> El importe, que va dentro del total pero no lleva IVA.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>El suplido, en el papel.</strong> Aquí, «Gastos suplidos».</span></p></div>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Cómo cuadra el total:</strong> base + cuota de IVA + recargo − retención + suplido. Si escribes tú el total, la app descuenta el recargo y el suplido antes de repartir el resto entre base y cuota.</p></div>
+<h3>La cuenta contable</h3>
+<p>En la casilla <strong>Cuenta</strong> puedes escribir el código o parte del nombre, y la app te propone las que coinciden. Con el icono de la derecha se abre la lista entera.</p>
+<figure class="ancha"><a href="manual-escritorio/22-selector-de-la-cuenta.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/22-selector-de-la-cuenta.webp" alt="Elegir la cuenta contable." loading="lazy"></a><figcaption>Elegir la cuenta contable.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>El buscador</strong>, por código o por nombre.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Las cuentas</strong>, agrupadas en gastos e ingresos. Pulsas una y queda puesta.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Cancelar</strong>, para salir sin elegir.</span></p></div>
+<p>Al guardar, la app aprende qué cuenta le pusiste a ese proveedor y a ese concepto, y te la propondrá la próxima vez. <a class="ref" href="#cap6">→ capítulo 6</a></p>
+<h3>Varias hojas y el justificante</h3>
+<p>Si un apunte tiene varias hojas, encima de la foto salen unas flechas y la cuenta («1 / 2»). El botón <strong>Justificante</strong> enseña el justificante de pago, si lo tiene. Desde la segunda hoja en adelante puedes <strong>sacar esa hoja como apunte propio</strong>, con el icono de bifurcación; la primera no se puede sacar.</p>
+<h3>Refrescar, quitar y cerrar</h3>
+<p><strong>⟳ Refrescar</strong> no vuelve a leer la foto: coge el texto que la app ya leyó y le aplica todo lo que ha aprendido desde entonces (el cuaderno, las cuentas y dónde mira en las facturas de ese proveedor). Solo rellena los datos que estén vacíos y rehace los importes. No guarda nada hasta que pulses Guardar.</p>
+<p><strong>Quitar</strong> manda el apunte a la papelera. Abajo sale un aviso con <strong>Deshacer</strong>, y también se recupera desde la <strong>rueda dentada de Ajustes</strong>, arriba a la derecha. <a class="ref" href="#cap11">→ capítulo 11</a></p>
+<p>La <strong>X</strong> de arriba, o la tecla Escape, cierra la ventana <strong>sin guardar</strong>. La esquina de abajo a la derecha se arrastra para hacer la ventana más grande o más pequeña, y la app recuerda el tamaño.</p>
+<h3>Cuando hay algo que mirar</h3>
+<p>Si el apunte está en ámbar, la ventana te dice <strong>cuántos campos</strong> quiere que revises y te los marca uno a uno. No tienes que buscarlos.</p>
+<figure class="ancha"><a href="manual-escritorio/09-ventana-de-revision-con-campos-en-ambar.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/09-ventana-de-revision-con-campos-en-ambar.webp" alt="Un ticket con cinco campos marcados." loading="lazy"></a><figcaption>Un ticket con cinco campos marcados.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Cuántos campos hay que revisar.</strong></span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Los campos marcados</strong>, en ámbar y con su aviso al lado.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>El porqué, escrito.</strong> Aquí, que el NIF de un proveedor nuevo nace «a revisar» hasta que tú lo confirmes. Es el cuaderno aprendiendo. <a class="ref" href="#cap6">→ capítulo 6</a></span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Me vale así.</strong> Cuando lo has mirado y está bien, esto lo da por bueno sin tocar nada más.</span></p></div>
+<p><strong>Me vale así</strong> solo se puede pulsar en los apuntes en ámbar. El apunte se pinta en verde con un anillo ámbar, para que sepas que lo diste por bueno tú; al exportar, la app te lo recuerda. Si vuelves a pulsarlo, se quita.</p>
+<p>Si al apunte <strong>le falta un dato imprescindible</strong> (el total, el número de factura, el NIF o la fecha), sale una banda roja arriba que dice cuál. Si ese hueco es correcto, por ejemplo un ticket sin número, pulsa su <strong>Me vale así</strong> y el apunte deja de estar en rojo.</p>
+<h3>Lo que leyó el motor</h3>
+<p>Abajo del todo puedes desplegar <strong>el texto tal cual lo leyó la app del papel</strong>. Sirve para entender de dónde ha salido un dato raro, y para comprobar de un vistazo si el problema está en la lectura o en el propio documento.</p>
+<figure class="ancha"><a href="manual-escritorio/10-texto-que-leyo-el-motor.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/10-texto-que-leyo-el-motor.webp" alt="El texto leído, desplegado bajo la imagen." loading="lazy"></a><figcaption>El texto leído, desplegado bajo la imagen.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Lo que leyó el motor</strong>, con el número de letras que sacó.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>OCR.</strong> Vuelve a leer el documento, por si lo has girado o mejorado.</span></p></div>
+<h3>Unir a otra factura</h3>
+<p>Cuando un mismo hecho llega en varios papeles (una factura de dos hojas, o la factura y el recibo del banco), <strong>Unir a otra factura</strong> los junta en un solo apunte. Se abre dentro de la misma ventana, en la mitad derecha.</p>
+<figure class="ancha"><a href="manual-escritorio/23-unir-a-otra-factura.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/23-unir-a-otra-factura.webp" alt="Buscando la hoja que va con este ticket." loading="lazy"></a><figcaption>Buscando la hoja que va con este ticket.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>¿Es esta?</strong> La app enseña las hojas de ese cliente, una a una. Arriba, cuántas hay.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Las flechas</strong>, para pasar de una hoja a otra.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Marcar esta hoja</strong>, si va con la factura que tienes abierta.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Los datos de esa hoja</strong>, para compararlos con los tuyos.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Unir.</strong> Pasa a la última pregunta.</span></p></div>
+<p>Al pulsar Unir, la app te pregunta <strong>qué es la segunda hoja</strong>: el <strong>justificante de pago</strong>, que acompaña pero no suma importe, u <strong>otra hoja de la factura</strong>. En ese caso te pregunta además <strong>cuál trae los datos fiscales</strong>, que es la que se queda con el apunte.</p>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Nada se une hasta que pulsas Guardar / Verificado.</strong> Si cierras la ventana sin guardar, todo queda como estaba. Al guardar, las hojas pasan a este apunte y los otros apuntes desaparecen de la tabla.</p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap9"><p class="cap-num">Capítulo 9</p><h2>Revisar el trimestre entero</h2>
+<p>En vez de ir apunte por apunte, puedes decirle a la app que <strong>vuelva a leer de golpe todo lo que no está en verde</strong>. Es lo que conviene hacer nada más importar un ZIP: en un minuto te deja en verde lo que se puede, y tú te dedicas solo a lo que queda.</p>
+<figure class="ancha"><a href="manual-escritorio/11a-revisar-este-trimestre-en-marcha.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/11a-revisar-este-trimestre-en-marcha.webp" alt="La revisión en marcha, con su barra de progreso abajo." loading="lazy"></a><figcaption>La revisión en marcha, con su barra de progreso abajo.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Por dónde va.</strong> Cuántos apuntes lleva y de qué cliente.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Los tiempos.</strong> Lo que tarda cada factura, la media y lo que queda.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Parar.</strong> Puedes cortar cuando quieras; lo ya revisado se queda.</span></p></div>
+<p>Mientras tanto, en la tabla, los apuntes que esperan su turno se ven en <strong>gris</strong> y no se pueden abrir; los que ya ha leído pasan a <strong>azul</strong>.</p>
+<div class="caja consejo"><p class="caja-tit">Consejo</p><p><strong>Mientras revisa, puedes seguir trabajando.</strong> La app lee en segundo plano; no te bloquea la pantalla ni te obliga a esperar.</p></div>
+<p>Al terminar te da el parte:</p>
+<figure class="ancha"><a href="manual-escritorio/11b-revisar-este-trimestre-al-terminar.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/11b-revisar-este-trimestre-al-terminar.webp" alt="El resumen del final." loading="lazy"></a><figcaption>El resumen del final.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Cómo queda el trimestre:</strong> verdes, a revisar y sin algún dato.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Cuántos apuntes han ganado datos nuevos</strong> en esta pasada.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Lo que ha tardado</strong>, en total y por factura.</span></p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap10"><p class="cap-num">Capítulo 10</p><h2>Exportar para tu programa de contabilidad</h2>
+<p>Cuando el trimestre está como quieres, el botón <strong>Exportar</strong> te lo saca en el formato que necesites. Todo lo que genera se refiere <strong>al cliente y al trimestre que tengas abiertos</strong>.</p>
+<figure class="ancha"><a href="manual-escritorio/12-exportar-formatos.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/12-exportar-formatos.webp" alt="Los seis formatos de salida." loading="lazy"></a><figcaption>Los seis formatos de salida.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Para el ERP (CSV + Excel).</strong> Dos ficheros, ingresos y gastos, con las columnas planas que sabe importar un programa de contabilidad.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Paquete completo.</strong> Excel, PDF y fotos, todo junto: igual que lo manda la app del móvil.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Libro registro en Excel.</strong> El libro tal cual, con sus cabeceras y sus totales, para leerlo o mandárselo al cliente.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Solo el PDF.</strong> El resumen del trimestre en un documento.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Solo las fotos.</strong> Las imágenes de las facturas, sin más.</span></p><p class="ll"><span class="n">6</span><span class="t"><strong>Para CONTASOL.</strong> El Excel que importa CONTASOL en el libro de facturas recibidas, en estimación directa. Antes te pregunta por tu último número de registro, para seguir la numeración.</span></p></div>
+<p><strong>Antes de exportar, la app te avisa</strong> si quedan apuntes en rojo (puedes exportar igual o verlos primero) y te recuerda los que diste por buenos con «Me vale así». Exportar no cambia nada de los apuntes, y funciona también sin suscripción.</p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap11"><p class="cap-num">Capítulo 11</p><h2>Ajustes y ayuda</h2>
+<p>La <strong>rueda dentada de Ajustes</strong>, arriba a la derecha, abre tres ventanas.</p>
+<figure class="ancha"><a href="manual-escritorio/13-ajustes.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/13-ajustes.webp" alt="El menú de ajustes." loading="lazy"></a><figcaption>El menú de ajustes.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Configuración de la tabla.</strong> Qué columnas quieres ver. <a class="ref" href="#cap3">→ capítulo 3</a></span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Registro y mantenimiento.</strong> Lo que la app ha aprendido, la papelera, el mantenimiento y el lector.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Copia de seguridad.</strong> Tiene capítulo propio, y conviene leerlo. <a class="ref" href="#cap12">→ capítulo 12</a></span></p></div>
+<h3>Registro y mantenimiento</h3>
+<p>Aquí ves <strong>lo que la app ha ido aprendiendo contigo</strong>, y puedes deshacerlo si algo no te gustó.</p>
+<figure class="ancha"><a href="manual-escritorio/13b-ajustes-registro-y-mantenimiento.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/13b-ajustes-registro-y-mantenimiento.webp" alt="El registro de cambios, con lo aprendido en el cuaderno." loading="lazy"></a><figcaption>El registro de cambios, con lo aprendido en el cuaderno.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Las cuatro pestañas:</strong> registro de cambios, papelera, mantenimiento y el lector.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Cada cosa aprendida</strong>, con su fecha y a cuántos apuntes ha afectado.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Deshacer.</strong> Quita ese aprendizaje concreto.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Vaciar el registro.</strong> Limpia la lista; no borra apuntes.</span></p></div>
+<p>Las otras tres pestañas:</p>
+<figure class="ancha"><a href="manual-escritorio/27-papelera-con-un-apunte.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/27-papelera-con-un-apunte.webp" alt="La papelera, con un apunte quitado." loading="lazy"></a><figcaption>La papelera, con un apunte quitado.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>El apunte quitado</strong>, con su cliente y el día en que lo quitaste.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Recuperar.</strong> Lo devuelve a su trimestre.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Vaciar la papelera.</strong> Borra de verdad todo lo que hay dentro, con sus imágenes. No se puede deshacer.</span></p></div>
+<figure class="ancha"><a href="manual-escritorio/24b-registro-y-mantenimiento-mantenimiento.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/24b-registro-y-mantenimiento-mantenimiento.webp" alt="El mantenimiento de la base de datos." loading="lazy"></a><figcaption>El mantenimiento de la base de datos.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Cuánto ocupan tus datos.</strong></span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Compactar la base de datos.</strong> Devuelve al disco el hueco que dejan los apuntes borrados. No se pierde nada, y no hace falta hacerlo a menudo.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>El recordatorio:</strong> compactar no sustituye a la copia de seguridad.</span></p></div>
+<figure class="ancha"><a href="manual-escritorio/24c-registro-y-mantenimiento-el-lector.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/24c-registro-y-mantenimiento-el-lector.webp" alt="El registro del lector de facturas." loading="lazy"></a><figcaption>El registro del lector de facturas.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Cómo va el lector.</strong> Si alguna vez se cierra solo, aquí queda apuntado cuándo y cuántas veces.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Abrir la carpeta.</strong> Si te pedimos ese registro para ayudarte, aquí lo tienes para mandarlo por correo. No lleva ningún dato de tus clientes.</span></p></div>
+<h3>El menú de Ayuda</h3>
+<p>Arriba a la derecha, al lado de la <strong>rueda dentada de Ajustes</strong>.</p>
+<figure class="ancha"><a href="manual-escritorio/15-menu-de-ayuda-desplegado.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/15-menu-de-ayuda-desplegado.webp" alt="El menú de Ayuda." loading="lazy"></a><figcaption>El menú de Ayuda.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Ver tutorial.</strong> El recorrido guiado de tres pasos que sale la primera vez. Lo puedes repetir cuando quieras.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Textos legales.</strong> Los términos y condiciones, la política de privacidad y el aviso legal, dentro de la app.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Contacta con nosotros.</strong> Abre un correo nuevo a apunta@apuntaapp.com, si tu equipo tiene un programa de correo configurado.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Acerca de.</strong> La versión instalada. <a class="ref" href="#cap13">→ capítulo 13</a></span></p></div>
+<figure class="ancha"><a href="manual-escritorio/25-tutorial-primera-pantalla.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/25-tutorial-primera-pantalla.webp" alt="El primer paso del tutorial." loading="lazy"></a><figcaption>El primer paso del tutorial.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Lo que explica cada paso</strong>, iluminado; el resto de la pantalla se oscurece.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>El paso</strong>, con su explicación.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Siguiente.</strong> O Saltar, para cerrarlo.</span></p></div>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap12"><p class="cap-num">Capítulo 12</p><h2>Copia de seguridad, y por qué importa</h2>
+<p>Como todo vive en tu ordenador y <strong>la app no guarda nada en ningún servidor</strong>, la copia de seguridad no es un trámite: es <strong>la única forma de recuperar el trabajo</strong> si el equipo se estropea, si cambias de ordenador o si alguien desinstala la aplicación.</p>
+<figure class="ancha"><a href="manual-escritorio/13c-ajustes-copia-de-seguridad.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/13c-ajustes-copia-de-seguridad.webp" alt="La ventana de copia de seguridad." loading="lazy"></a><figcaption>La ventana de copia de seguridad.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Cuándo hiciste la última.</strong> Si nunca has hecho ninguna, te lo dice en amarillo.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Cuánto va a ocupar</strong>, para que sepas dónde te cabe.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>El aviso que conviene leer:</strong> al desinstalar, Windows borra los datos de todos tus clientes.</span></p><p class="ll"><span class="n">4</span><span class="t"><strong>Crear copia de seguridad.</strong> Un solo fichero con los datos y todas las imágenes, protegido con una contraseña que eliges tú. Guárdalo donde quieras: un disco externo, el servidor del despacho o tu nube.</span></p><p class="ll"><span class="n">5</span><span class="t"><strong>Restaurar copia.</strong> Trae de vuelta lo que hubiera en esa copia. Te pide su contraseña y te pregunta antes de sustituir los datos de ahora.</span></p></div>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Cuándo hacerla, en la práctica:</strong> al cerrar cada trimestre y antes de cualquier cosa gorda (cambiar de equipo, actualizar Windows, desinstalar). Es un minuto, y es lo que separa un susto de un desastre.</p></div>
+<div class="caja atencion"><p class="caja-tit">Atención</p><p><strong>Apunta la contraseña de cada copia.</strong> Si la pierdes, nadie puede abrir esa copia, ni siquiera nosotros.</p></div>
+<h3>Restaurar una copia</h3>
+<p>Pulsa <strong>Restaurar copia</strong>, elige el fichero y escribe su contraseña.</p>
+<figure class="ancha"><a href="manual-escritorio/28-restaurar-copia-contrasena.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/28-restaurar-copia-contrasena.webp" alt="Restaurar una copia de seguridad." loading="lazy"></a><figcaption>Restaurar una copia de seguridad.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>El fichero</strong> que has elegido.</span></p><p class="ll"><span class="n">2</span><span class="t"><strong>La contraseña</strong> de esa copia.</span></p><p class="ll"><span class="n">3</span><span class="t"><strong>Restaurar.</strong> Antes de seguir, te pregunta si quieres sustituir los datos de ahora por los de la copia.</span></p></div>
+<p>Para que no se te olvide, la <strong>rueda dentada de Ajustes</strong>, arriba a la derecha, lleva un <strong>punto rojo</strong> cuando no tienes copia o la última tiene 30 días o más.</p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section><section class="cap" id="cap13"><p class="cap-num">Capítulo 13</p><h2>Preguntas frecuentes</h2>
+<h3>¿Qué versión tengo instalada?</h3>
+<p>En <strong>Ayuda</strong>, arriba a la derecha. Es el primer dato que te van a pedir si escribes para contar un problema.</p>
+<figure class="ancha"><a href="manual-escritorio/14-ayuda-acerca-de-con-la-version.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/14-ayuda-acerca-de-con-la-version.webp" alt="La ventana de Ayuda, con la versión." loading="lazy"></a><figcaption>La ventana de Ayuda, con la versión.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>La versión instalada.</strong></span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Ver licencias.</strong> Los componentes de terceros que usa la aplicación.</span></p></div>
+<h3>Mi cliente me ha mandado el trimestre otra vez. ¿Pierdo lo que ya había corregido?</h3>
+<p>No. Al volver a importar, <strong>lo que ya estaba puesto se respeta</strong>: un hueco en el fichero nuevo no vacía un dato que tú habías rellenado.</p>
+<h3>¿Puedo mezclar facturas del móvil y facturas escaneadas en el mismo trimestre?</h3>
+<p>Sí. Los dos caminos acaban en la misma tabla y se exportan juntos.</p>
+<h3>Un proveedor sale con un nombre raro</h3>
+<p>Corrígelo una vez en la ventana de revisión o en el cuaderno. A partir de ahí, <strong>todas las facturas de ese NIF llevarán el nombre que tú pusiste</strong>, en todos tus clientes. <a class="ref" href="#cap6">→ capítulo 6</a></p>
+<h3>He quitado un apunte por error</h3>
+<p>Está en la papelera. Pulsa la <strong>rueda dentada de Ajustes</strong>, arriba a la derecha, y luego Registro y mantenimiento → Papelera. Ahí se recupera con un botón. Si acabas de quitarlo, también vale el Deshacer del aviso de abajo. <a class="ref" href="#cap11">→ capítulo 11</a></p>
+<h3>¿Qué pasa si mi suscripción no está activa?</h3>
+<p>Tus datos siguen ahí y puedes seguir <strong>abriendo, corrigiendo, validando y exportando</strong>, además de usar el cuaderno y la copia de seguridad. Lo que se apaga es lo que lee facturas: <strong>Importar ZIP</strong>, <strong>Escanear lote</strong>, <strong>Revisar este trimestre</strong> y <strong>⟳ Refrescar</strong>.</p>
+<h3>¿Y si borro todas las fichas?</h3>
+<p>La app se queda vacía, esperando el primer fichero de un cliente. Si las borraste por error, <strong>restaura tu última copia de seguridad</strong>: vuelven las fichas con todos sus apuntes. Si no tienes copia, pide a tus clientes que te vuelvan a mandar su ZIP desde el móvil y arrástralo encima de la ventana. <a class="ref" href="#cap12">→ capítulo 12</a></p>
+<figure class="ancha"><a href="manual-escritorio/33-pantalla-sin-fichas.webp" target="_blank" rel="noopener" title="Abrir la imagen a tamaño completo"><img src="manual-escritorio/33-pantalla-sin-fichas.webp" alt="La app sin ninguna ficha." loading="lazy"></a><figcaption>La app sin ninguna ficha.</figcaption></figure>
+<div class="llamadas"><p class="ll"><span class="n">1</span><span class="t"><strong>Importar ZIP.</strong></span></p><p class="ll"><span class="n">2</span><span class="t"><strong>Sin fichas todavía.</strong></span></p></div>
+<h3>¿Cómo vuelvo a ver el tutorial?</h3>
+<p>En Ayuda → Ver tutorial. <a class="ref" href="#cap11">→ capítulo 11</a></p>
+<h3>¿Dónde están mis datos?</h3>
+<p>En tu ordenador, y solo ahí. Por eso el capítulo de la copia de seguridad es el más importante de este manual. <a class="ref" href="#cap12">→ capítulo 12</a></p>
+<h3>¿Con quién hablo si algo no va?</h3>
+<p>Escríbenos a <strong>apunta@apuntaapp.com</strong>, diciendo <strong>qué versión tienes</strong> y, si puedes, adjunta la factura que da problemas. Con eso se resuelve casi todo.</p>
+<p class="volver"><a href="#indice">↑ Volver al índice</a></p></section>
+
+<div class="cierre">
+  <p class="lema">Apunta... Y olvídate.</p>
+  <a class="boton-pdf" href="manual-escritorio/Manual-Apunta-App-Escritorio.pdf" download>⬇&nbsp; Descargar el manual en PDF</a>
+  <p class="legal">© 2026 Evolution Studios S.L. Todos los derechos reservados. Queda prohibida la reproducción, distribución o modificación, total o parcial, de este manual por cualquier medio sin la autorización previa y por escrito de Evolution Studios S.L.</p>
+</div>
+
+</main>
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <div class="contenedor">
+            <div class="pie-contenido">
+                <div class="pie-bloque">
+                    <img src="logo-apunta-blanco.png" alt="Apunta" class="pie-logo-imagen">
+                    <p class="pie-empresa">Una app de Evolution Studios S.L.</p>
+                </div>
+                <div class="pie-bloque">
+                    <p class="pie-titulo">Legal</p>
+                    <ul>
+                        <li><a href="politica-privacidad-escritorio.html">Política de privacidad</a></li>
+                        <li><a href="aviso-legal-escritorio.html">Aviso legal</a></li>
+                        <li><a href="terminos-condiciones-escritorio.html">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="pie-bloque">
+                    <p class="pie-titulo">Contacto</p>
+                    <p><a href="mailto:apunta@apuntaapp.com">apunta@apuntaapp.com</a></p>
+                    <p><a href="manual-escritorio.html">Manual de Apunta App Escritorio</a></p>
+                </div>
+            </div>
+            <div class="pie-copyright">
+                <p>© 2026 Evolution Studios S.L. · Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
