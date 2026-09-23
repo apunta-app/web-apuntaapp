@@ -896,3 +896,40 @@ body.con-visor {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   MENU DE ARRIBA EN EL MOVIL
+   Cada opcion en una sola linea. Letra y separacion un poco mas
+   justas para que quepan; si aun asi no caben (pantallas muy
+   estrechas), se desliza de lado el menu, nunca la pagina entera.
+   ============================================ */
+@media (max-width: 640px) {
+    .header .contenedor {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .navegacion {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .navegacion::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navegacion ul {
+        gap: 12px;
+    }
+
+    .navegacion li {
+        flex-shrink: 0;
+    }
+
+    .navegacion a {
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+}
