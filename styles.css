@@ -247,7 +247,8 @@ p {
 }
 
 .insignia-google-play:hover,
-.insignia-app-store:hover {
+.insignia-app-store:hover,
+.insignia-microsoft:hover {
     transform: translateY(-2px);
     transition: transform 0.2s ease;
 }
@@ -256,6 +257,13 @@ p {
    ~59,4px con width:200px sobre un original de 478x142). Ancho automático para
    respetar la proporción oficial del badge de Apple (no se deforma nunca). */
 .insignia-imagen-apple {
+    height: 59px;
+    width: auto;
+}
+
+/* Distintivo de Microsoft Store (gestorias.html): la misma altura que los de
+   Google Play y App Store, con su proporción oficial (161 x 44). */
+.insignia-imagen-microsoft {
     height: 59px;
     width: auto;
 }
