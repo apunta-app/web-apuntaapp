@@ -8,12 +8,12 @@
 
 ## 2026-10-05 — Textos al día con la app, «Apunta App» siempre junto y el chat
 
-> **Nada de lo de hoy está publicado todavía.** GitHub tiene desde las 21:12
-> (hora de España) una incidencia con Actions y Pages: las publicaciones de
-> `b1283fc` y `e61d2ce` fallaron («The job was not acquired by Runner») y
-> apuntaapp.com sigue enseñando la versión del 1 de octubre (`7e78715`). Los
-> commits están subidos a `main`; saldrán todos juntos en cuanto GitHub
-> publique el siguiente.
+> **Publicado el 06/10/2026 a las 00:50** (publicación nº 32 de GitHub Pages),
+> después de la incidencia de GitHub con Actions y Pages del 05/10 por la
+> noche, que hizo fallar las publicaciones de `b1283fc` y `e61d2ce`. Los cuatro
+> commits de abajo salieron juntos y se comprobaron en apuntaapp.com página por
+> página. El chat se probó de verdad en las dos páginas publicadas (preguntas
+> reales, botón «No», línea de Contacto): funciona.
 
 ### Commits de hoy
 
@@ -55,15 +55,13 @@
 
 ### Pendiente
 
-1. **Publicar**: cuando GitHub se recupere, comprobar que salen los tres
-   commits y probar el chat de verdad en las dos páginas de apuntaapp.com.
-2. **La abogada**: el texto del aviso de la ventanita (provisional) y el
+1. **La abogada**: el texto del aviso de la ventanita (provisional) y el
    apartado nuevo de las dos políticas de privacidad. En esas políticas, los
    apartados de destinatarios y de transferencias internacionales todavía no
    mencionan a Cloudflare ni a Anthropic.
-3. **App de escritorio, próxima versión**: el botón «Salir de Apunta» → «Salir
+2. **App de escritorio, próxima versión**: el botón «Salir de Apunta» → «Salir
    de Apunta App».
-4. `README.md` está desactualizado (dice «Sin JavaScript» y no lista las
+3. `README.md` está desactualizado (dice «Sin JavaScript» y no lista las
    páginas nuevas).
 
 ## 2026-07-10 — Activación de iOS en la web
