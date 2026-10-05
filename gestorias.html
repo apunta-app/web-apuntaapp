@@ -18,6 +18,7 @@
     <title>Apunta App Escritorio — Para gestorías y asesorías</title>
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
@@ -222,7 +223,8 @@
         <div class="contenedor contenedor-estrecho centrado">
             <h2>Contacto</h2>
             <p class="texto-principal">¿Tienes una duda o quieres contarnos algo?</p>
-            <p class="contacto-email">Escríbenos a <a href="mailto:apunta@apuntaapp.com">apunta@apuntaapp.com</a></p>
+            <p class="contacto-email">Escríbenos a <a href="mailto:apunta@apuntaapp.com">apunta@apuntaapp.com</a> o por WhatsApp al <a href="https://wa.me/34680352807" target="_blank" rel="noopener">+34 680 352 807</a></p>
+            <p class="texto-principal chat-contacto">¿Prefieres preguntar ahora? <button type="button" class="chat-abrir-enlace" data-abrir-chat>Pregúntale al Asistente de Apunta App</button></p>
         </div>
     </section>
 
@@ -261,6 +263,41 @@
             </div>
         </div>
     </footer>
+
+    <!-- CHAT DE AYUDA -->
+    <button type="button" class="chat-burbuja" aria-label="Abrir el chat de ayuda" aria-expanded="false" aria-controls="chat-ventana">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg>
+    </button>
+
+    <section id="chat-ventana" class="chat-ventana" data-bot="escritorio" role="dialog" aria-label="Asistente de Apunta App" hidden>
+        <div class="chat-cabecera">
+            <div class="chat-cabecera-textos">
+                <p class="chat-titulo">Asistente de Apunta App</p>
+                <p class="chat-subtitulo">Dudas sobre Apunta App Escritorio</p>
+            </div>
+            <button type="button" class="chat-cerrar" aria-label="Cerrar el chat">×</button>
+        </div>
+
+        <p class="chat-aviso">Soy un asistente con inteligencia artificial y puedo equivocarme. No escribas datos personales: ni tu NIF/CIF, ni facturas, ni nombres.</p>
+
+        <div class="chat-mensajes" aria-live="polite">
+            <div class="chat-mensaje chat-mensaje-asistente"><p>¡Hola! Soy el Asistente de Apunta App. Pregúntame lo que quieras sobre Apunta App Escritorio: estoy aquí para ayudarte.</p></div>
+        </div>
+
+        <div class="chat-pie">
+            <form class="chat-formulario">
+                <label for="chat-entrada" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Escribe tu pregunta</label>
+                <input id="chat-entrada" class="chat-entrada" type="text" placeholder="Escribe tu pregunta…" autocomplete="off" maxlength="500">
+                <button type="submit" class="chat-enviar" aria-label="Enviar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <template id="plantilla-whatsapp"><a class="chat-boton-whatsapp" href="https://wa.me/34680352807" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg> WhatsApp +34 680 352 807</a></template>
+
+    <script src="chat.js" defer></script>
 
     <!-- Ampliar una captura al pulsarla. Sin librerias y sin CDN; el marcado
          lo construye el propio script. -->
