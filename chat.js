@@ -27,7 +27,12 @@
 // ventanita y la respuesta debajo, para leerla desde el principio.
 (function () {
     var PORTERO = 'https://apunta-portero.apunta-portero.workers.dev';
-    var WHATSAPP = 'https://wa.me/34680352807';
+    // El botón de WhatsApp abre la conversación con un mensaje ya escrito,
+    // para que en atención al cliente sepan de qué chat viene.
+    var WHATSAPP = 'https://wa.me/34680352807?text=' + encodeURIComponent({
+        movil: 'Hola, vengo del asistente de Apunta App móvil de la web y tengo una duda:',
+        escritorio: 'Hola, vengo del asistente de Apunta App Escritorio de la web y tengo una duda:'
+    }[document.querySelector('.chat-ventana').getAttribute('data-bot')]);
     var NO_PARA_WHATSAPP = 3;
     var MAX_HISTORIAL = 12;
     var TEXTO_WHATSAPP_NO = 'Siento no estar sabiendo ayudarte con esto. Te recomiendo que escribas a nuestro servicio de atención al cliente por WhatsApp: lo verán contigo.';
