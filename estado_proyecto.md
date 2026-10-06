@@ -2,47 +2,80 @@
 
 > Repo: `apunta-app/web-apuntaapp` · Rama: `main` · Publicación: GitHub Pages → apuntaapp.com
 
-**Última actualización: 2026-10-07**
+**Última actualización: 2026-10-06 (cierre del día)**
 
 ---
 
-## 2026-10-07 — Conocimiento del Asistente con las respuestas de Javier
+## 2026-10-06 — El Asistente de Apunta App, arreglado y al día
 
-Solo cambia el portero (fuera del repo): borrar / pasar a ingreso en el
-móvil (Editar → tres puntitos), «Varios tipos de IVA» sin sumar cuotas,
-«Quitar» en el escritorio, botón R a la derecha de «Importes», enlace en
-«Pulsa aquí» y sin consejos de relleno. Probado y comprobado en apuntaapp.com.
+> Todo publicado en apuntaapp.com y comprobado con Chrome y la IA de verdad,
+> en las dos páginas. (Tres commits de la tarde dicen «07/10» en el mensaje
+> por error: son de hoy, 06/10.)
+
+### Lo que se ha hecho
+
+1. **Arreglo de los fallos que vio Javier el 05/10** (chat del móvil que
+   mandaba a WhatsApp las preguntas del escritorio, el cuaderno «en Ajustes»,
+   el «Perdón» + WhatsApp al corregirle, el chat que bajaba de golpe):
+   - **Derivar entre páginas:** si a un chat le preguntan por la otra app,
+     sale el botón «Preguntar al asistente de …», que abre la otra página con
+     su chat abierto y la pregunta ya hecha; aquel la contesta solo (si
+     también quisiera derivarla, WhatsApp: sin ping-pong).
+   - **Scroll:** al llegar la respuesta, la pregunta queda arriba y «¿Te he
+     resuelto la duda?» al final (también con respuestas cortas).
+   - **Correcciones:** «no, …» con más de cuatro palabras no suma un «No» ni
+     saca WhatsApp; el asistente no dice «perdón» ni «perdona».
+2. **Conocimiento del asistente** (fuera del repo, `Dominio y web\Chatbot`):
+   mapa de dónde está cada cosa en las dos apps, sacado de los manuales y sus
+   capturas; regla de usar solo el mapa; y las respuestas de Javier:
+   borrar / pasar a ingreso en el móvil (Editar gasto → tres puntitos),
+   «Varios tipos de IVA» sin sumar cuotas, «Quitar» en el escritorio, botón R
+   a la derecha de «Importes», enlace en «Pulsa aquí», sin consejos de
+   relleno, el icono de bifurcación sin decir dónde está, y el texto de
+   Javier para «¿se puede instalar en el servidor del despacho?».
+3. **Portero** (Cloudflare Worker): marca `[[DERIVAR|pregunta]]` y redes de
+   seguridad (quita «perdón», «disculpa la confusión», el teléfono escrito y
+   los emojis). Publicado con su configuración normal (300 preguntas al día,
+   vistas previas cerradas).
+4. **WhatsApp con mensaje ya escrito:** el botón del chat del móvil, el del
+   escritorio y el enlace de Contacto abren la conversación diciendo de dónde
+   viene el cliente.
+5. **Pruebas:** batería de 103 preguntas en 6 rondas y repeticiones de las
+   preguntas que cambiaban (603 preguntas contra una versión de prueba, con
+   su propio contador). Preguntas y respuestas en
+   `Chatbot\BATERIA-PREGUNTAS-Y-RESPUESTAS.md`, para que Claude las revise.
+6. **Privacidad:** los apartados 3.6 (móvil) y 4.5 (escritorio) se quedan
+   como están, por decisión de Javier.
+
+### Commits de hoy
+
+- `f8a6858` (00:13) — el Asistente en autónomos y gestorías, y el WhatsApp en Contacto.
+- `45cc845` (00:21) y `a2aba83` (00:51) — estado del 05/10 y su publicación.
+- `ac753c2` — derivar a la otra página, pregunta arriba, correcciones.
+- `7034873` — con una respuesta corta, los botones también a la vista.
+- `2516e6f`, `c548f6c`, `9ce7d9e` — estado del proyecto.
+- `e18dbf2` — WhatsApp con mensaje ya escrito.
+- El commit de este cierre.
+
+### Coste de la API hoy
+
+Unos **1,7 $**: 1,62 $ de las baterías de prueba (medido) y unos 0,05-0,10 $
+de las 21 preguntas de comprobación en apuntaapp.com (estimado). El saldo de
+créditos solo se ve en console.anthropic.com.
 
 ### Pendiente
 
-- **Manual del móvil**: falta la captura de un apunte abierto desde el
-  Historial («Editar gasto») con sus tres puntitos arriba a la derecha y su
-  menú («Pasarlo a ingreso», «Borrar»). No se ha tocado el manual.
-- ~~Servidor del despacho~~: resuelto el 07/10 con el texto de Javier (el
-  asistente explica que va en el ordenador de cada gestor, sin WhatsApp).
-
-## 2026-10-06 — Arreglo del Asistente de Apunta App (publicado y comprobado)
-
-Fallos que vio Javier el 05/10: el chat del móvil mandaba a WhatsApp las
-preguntas de la app de escritorio; el del escritorio decía que el cuaderno
-está en Ajustes → Registro y mantenimiento; al corregirle decía «Perdón» y
-sacaba WhatsApp; y al llegar la respuesta el chat bajaba de golpe al final.
-
-- `ac753c2` + `fix` siguiente — **chat.js / chat.css**: botón «Preguntar al
-  asistente de …» que abre la otra página con `?pregunta=…&desde=…`; allí el
-  chat se abre solo con la pregunta hecha y la contesta (si también quisiera
-  derivarla, WhatsApp: sin ping-pong). La pregunta queda arriba al llegar la
-  respuesta. «no, …» con más de cuatro palabras es una corrección: no suma
-  «No» ni saca WhatsApp.
-- **Portero** (fuera del repo, `Dominio y web\Chatbot`): marca nueva
-  `[[DERIVAR|pregunta]]`, mapa de dónde está cada cosa en los dos ficheros de
-  conocimiento, reglas de correcciones y «perdón» prohibido, y redes de
-  seguridad (quita «perdón», «disculpa la confusión», el teléfono escrito y
-  los emojis).
-- Batería de 103 preguntas en 6 rondas contra una versión de prueba
-  (`Chatbot\BATERIA-PREGUNTAS-Y-RESPUESTAS.md`). Comprobado en apuntaapp.com
-  con los casos que fallaron, en las dos páginas. Coste de las pruebas: ~1,37 $.
-- «Te respondemos en 24-48 horas laborables» en Contacto, sin tocar.
+- **Manual del móvil:** falta la captura de un apunte abierto desde el
+  Historial («Editar gasto») con sus tres puntitos y su menú («Pasarlo a
+  ingreso», «Borrar»). No se ha tocado el manual.
+- **La abogada:** el texto del aviso de la ventanita (provisional) y las
+  políticas de privacidad (destinatarios y transferencias internacionales
+  todavía no mencionan a Cloudflare ni a Anthropic).
+- **Revisar la batería** con Claude (`Chatbot\BATERIA-PREGUNTAS-Y-RESPUESTAS.md`).
+- **App de escritorio, próxima versión:** «Salir de Apunta» → «Salir de Apunta App».
+- `README.md` desactualizado (dice «Sin JavaScript»).
+- Vistas previas de `Chatbot\vista-previa`: tienen la ventanita antigua y ya
+  no hablan con el portero (cerrado a vistas previas).
 
 ## 2026-10-05 — Textos al día con la app, «Apunta App» siempre junto y el chat
 
