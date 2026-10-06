@@ -2,9 +2,24 @@
 
 > Repo: `apunta-app/web-apuntaapp` · Rama: `main` · Publicación: GitHub Pages → apuntaapp.com
 
-**Última actualización: 2026-10-06**
+**Última actualización: 2026-10-07**
 
 ---
+
+## 2026-10-07 — Conocimiento del Asistente con las respuestas de Javier
+
+Solo cambia el portero (fuera del repo): borrar / pasar a ingreso en el
+móvil (Editar → tres puntitos), «Varios tipos de IVA» sin sumar cuotas,
+«Quitar» en el escritorio, botón R a la derecha de «Importes», enlace en
+«Pulsa aquí» y sin consejos de relleno. Probado y comprobado en apuntaapp.com.
+
+### Pendiente
+
+- **Manual del móvil**: falta la captura de un apunte abierto desde el
+  Historial («Editar gasto») con sus tres puntitos arriba a la derecha y su
+  menú («Pasarlo a ingreso», «Borrar»). No se ha tocado el manual.
+- **Servidor del despacho / varios usuarios**: el asistente sigue diciendo que
+  no lo sabe hasta que Javier decida qué contestar.
 
 ## 2026-10-06 — Arreglo del Asistente de Apunta App (publicado y comprobado)
 
