@@ -18,8 +18,8 @@ móvil (Editar → tres puntitos), «Varios tipos de IVA» sin sumar cuotas,
 - **Manual del móvil**: falta la captura de un apunte abierto desde el
   Historial («Editar gasto») con sus tres puntitos arriba a la derecha y su
   menú («Pasarlo a ingreso», «Borrar»). No se ha tocado el manual.
-- **Servidor del despacho / varios usuarios**: el asistente sigue diciendo que
-  no lo sabe hasta que Javier decida qué contestar.
+- ~~Servidor del despacho~~: resuelto el 07/10 con el texto de Javier (el
+  asistente explica que va en el ordenador de cada gestor, sin WhatsApp).
 
 ## 2026-10-06 — Arreglo del Asistente de Apunta App (publicado y comprobado)
 
