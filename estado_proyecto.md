@@ -2,9 +2,32 @@
 
 > Repo: `apunta-app/web-apuntaapp` · Rama: `main` · Publicación: GitHub Pages → apuntaapp.com
 
-**Última actualización: 2026-10-05**
+**Última actualización: 2026-10-06**
 
 ---
+
+## 2026-10-06 — Arreglo del Asistente de Apunta App (publicado y comprobado)
+
+Fallos que vio Javier el 05/10: el chat del móvil mandaba a WhatsApp las
+preguntas de la app de escritorio; el del escritorio decía que el cuaderno
+está en Ajustes → Registro y mantenimiento; al corregirle decía «Perdón» y
+sacaba WhatsApp; y al llegar la respuesta el chat bajaba de golpe al final.
+
+- `ac753c2` + `fix` siguiente — **chat.js / chat.css**: botón «Preguntar al
+  asistente de …» que abre la otra página con `?pregunta=…&desde=…`; allí el
+  chat se abre solo con la pregunta hecha y la contesta (si también quisiera
+  derivarla, WhatsApp: sin ping-pong). La pregunta queda arriba al llegar la
+  respuesta. «no, …» con más de cuatro palabras es una corrección: no suma
+  «No» ni saca WhatsApp.
+- **Portero** (fuera del repo, `Dominio y web\Chatbot`): marca nueva
+  `[[DERIVAR|pregunta]]`, mapa de dónde está cada cosa en los dos ficheros de
+  conocimiento, reglas de correcciones y «perdón» prohibido, y redes de
+  seguridad (quita «perdón», «disculpa la confusión», el teléfono escrito y
+  los emojis).
+- Batería de 103 preguntas en 6 rondas contra una versión de prueba
+  (`Chatbot\BATERIA-PREGUNTAS-Y-RESPUESTAS.md`). Comprobado en apuntaapp.com
+  con los casos que fallaron, en las dos páginas. Coste de las pruebas: ~1,37 $.
+- «Te respondemos en 24-48 horas laborables» en Contacto, sin tocar.
 
 ## 2026-10-05 — Textos al día con la app, «Apunta App» siempre junto y el chat
 
