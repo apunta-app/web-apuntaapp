@@ -126,6 +126,9 @@
     flex-direction: column;
     gap: 10px;
     background-color: #ffffff;
+    /* Para que offsetTop de cada mensaje se mida desde aquí (chat.js
+       deja la pregunta arriba al llegar la respuesta). */
+    position: relative;
 }
 
 .chat-mensaje {
@@ -155,13 +158,14 @@
     border-bottom-right-radius: 4px;
 }
 
-.chat-mensaje-asistente a:not(.chat-boton-whatsapp) {
+.chat-mensaje-asistente a:not(.chat-boton-whatsapp):not(.chat-boton-derivar) {
     color: #2d5a3d;
     font-weight: 600;
     text-decoration: underline;
 }
 
-.chat-boton-whatsapp {
+.chat-boton-whatsapp,
+.chat-boton-derivar {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -176,7 +180,8 @@
     text-decoration: none;
 }
 
-.chat-boton-whatsapp:hover {
+.chat-boton-whatsapp:hover,
+.chat-boton-derivar:hover {
     background-color: #2d5a3d;
     color: #ffffff;
 }
