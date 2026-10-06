@@ -155,8 +155,11 @@
         bloque.innerHTML = '<span class="chat-valoracion-pregunta">¿Te he resuelto la duda?</span>' +
             '<button type="button" data-valor="si">Sí, gracias</button>' +
             '<button type="button" data-valor="no">No</button>';
-        // Sin bajar: así la respuesta se sigue leyendo desde el principio.
+        // Sin bajar hasta el final: la pregunta sigue arriba. Se vuelve a
+        // colocar porque, con una respuesta corta, antes de añadir este
+        // bloque no había sitio por debajo para subirla del todo.
         mensajes.appendChild(bloque);
+        verDesdeLaPregunta();
     }
 
     function preguntaPendiente() {
